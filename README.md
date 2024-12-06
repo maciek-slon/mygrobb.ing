@@ -3,8 +3,14 @@ BootLeaf
 
 A simple, responsive template for building web mapping applications with [Bootstrap](http://getbootstrap.com/), [Leaflet](http://leafletjs.com/), and [typeahead.js](http://twitter.github.io/typeahead.js/).
 
+### Update 2024:
+* Bootstrap 5.3.3
+* Leaflet 1.9.4
+* Marker Cluster 1.4.1
+* Font Awesome 6.7.1
+
 ### Demo:
-http://bmcbride.github.io/bootleaf/
+[http://anshori.github.io/bootleaf/](http://anshori.github.io/bootleaf/)
 
 ### Features:
 * Fullscreen mobile-friendly map template with responsive Navbar and modal placeholders
