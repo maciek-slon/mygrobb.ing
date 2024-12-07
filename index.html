@@ -33,10 +33,13 @@
 	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Bootleaf</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+			<div class="d-inline-flex align-items-center">
+				<a class="d-block d-sm-none me-3" href="#" id="sidebar-toggle-btn"><i class="fa-solid fa-magnifying-glass fa-xl white"></i></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -47,14 +50,14 @@
 							<i class="fa-solid fa-earth-asia white"></i> Tools
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#" id="full-extent-btn"><i class="fa-solid fa-maximize"></i> Zoom To
+							<li><a class="dropdown-item" href="#" id="full-extent-btn"><i class="fa-solid fa-maximize text-dark"></i> Zoom To
 									Full Extent</a></li>
-							<li><a class="dropdown-item" href="#" id="legend-btn"><i class="fa-regular fa-image"></i> Show Legend</a>
+							<li><a class="dropdown-item" href="#" id="legend-btn"><i class="fa-regular fa-image text-dark"></i> Show Legend</a>
 							</li>
 							<li>
 								<hr class="dropdown-divider">
 							</li>
-							<li><a class="dropdown-item" href="#" id="login-btn"><i class="fa-solid fa-user"></i> Login</a></li>
+							<li><a class="dropdown-item" href="#" id="login-btn"><i class="fa-solid fa-user text-dark"></i> Login</a></li>
 						</ul>
 					</li>
 					<li class="nav-item dropdown">
@@ -63,24 +66,24 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="data/boroughs.geojson" class="dropdown-item" download="boroughs.geojson" target="_blank"><i
-										class="fa-solid fa-download"></i> Boroughs</a></li>
+										class="fa-solid fa-download text-dark"></i> Boroughs</a></li>
 							<li><a href="data/subways.geojson" class="dropdown-item" download="subways.geojson" target="_blank"><i
-										class="fa-solid fa-download"></i> Subway Lines</a></li>
+										class="fa-solid fa-download text-dark"></i> Subway Lines</a></li>
 							<li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" class="dropdown-item" download="theaters.geojson"
-									target="_blank"><i class="fa-solid fa-download"></i> Theaters</a></li>
+									target="_blank"><i class="fa-solid fa-download text-dark"></i> Theaters</a></li>
 							<li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" class="dropdown-item" download="museums.geojson"
-									target="_blank"><i class="fa-solid fa-download"></i> Museums</a></li>
+									target="_blank"><i class="fa-solid fa-download text-dark"></i> Museums</a></li>
 						</ul>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item d-none d-sm-block">
 						<a class="nav-link" href="#" id="list-btn"><i class="fa-solid fa-list white"></i> POI List</a>
 					</li>
 				</ul>
-				<form class="d-flex has-feedback" role="search">
+				<form class="d-block has-feedback" role="search">
 					<div class="form-floating">
-						<input id="searchbox" class="form-control bg-secondary" type="text" placeholder="Search"
+						<input id="searchbox" class="form-control bg-light text-dark" type="text" placeholder="Search"
 							aria-label="Search">
-						<i class="fa-solid fa-magnifying-glass form-control-feedback white" id="searchicon"></i>
+						<i class="fa-solid fa-magnifying-glass form-control-feedback" id="searchicon"></i>
 					</div>
 				</form>
 			</div>
@@ -99,17 +102,28 @@
 					</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-sm-8 pe-1">
+							<div class="col-xs-8 col-md-8 pe-md-1 pe-sm-0">
 								<input type="text" class="form-control search" placeholder="Filter" />
 							</div>
-							<div class="col-sm-4 ps-1">
-								<button type="button" class="btn btn-primary sort d-inline-flex align-items-center"
+							<div class="col-xs-4 col-md-4 ps-md-1 ps-sm-0">
+								<button type="button" class="btn btn-primary sort d-none d-sm-block d-inline-flex align-items-center"
 									data-sort="feature-name" id="sort-btn"><i class="fa-solid fa-sort"></i>&nbsp;Sort</button>
 							</div>
 						</div>
 					</div>
 					<div class="sidebar-table border">
 						<table class="table table-hover" id="feature-list">
+							<thead class="d-none">
+								<tr>
+									<th>Icon</th>
+								<tr>
+								<tr>
+									<th>Name</th>
+								<tr>
+								<tr>
+									<th>Chevron</th>
+								<tr>
+							</thead>
 							<tbody class="list"></tbody>
 						</table>
 					</div>
