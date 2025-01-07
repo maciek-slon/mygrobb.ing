@@ -17,9 +17,9 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-	<link rel="stylesheet"
-		href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
-	<link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css">
+	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
+	<!-- <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css"> -->
+	<link rel="stylesheet" href="assets/lib/leaflet-panel-layers.min.css" />
 	<link rel="stylesheet" href="assets/css/app.css">
 
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
@@ -42,10 +42,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link" href="#" id="about-btn"><i class="fa-solid fa-circle-question white"></i> About</a>
-					</li>
-					<li class="nav-item dropdown">
+					</li> -->
+					<!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<i class="fa-solid fa-earth-asia white"></i> Tools
 						</a>
@@ -74,18 +74,21 @@
 							<li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" class="dropdown-item" download="museums.geojson"
 									target="_blank"><i class="fa-solid fa-download text-dark"></i> Museums</a></li>
 						</ul>
+					</li> -->
+					<li class="nav-item d-none d-sm-block">
+						<a class="nav-link" href="#" id="full-extent-btn"><i class="fa-solid fa-expand white"></i> Pokaż wszystko</a>
 					</li>
 					<li class="nav-item d-none d-sm-block">
-						<a class="nav-link" href="#" id="list-btn"><i class="fa-solid fa-list white"></i> POI List</a>
+						<a class="nav-link" href="#" id="list-btn"><i class="fa-solid fa-location-dot white"></i> Lista obiektów</a>
 					</li>
 				</ul>
-				<form class="d-block has-feedback" role="search">
+				<!-- <form class="d-block has-feedback" role="search">
 					<div class="form-floating">
 						<input id="searchbox" class="form-control bg-light text-dark" type="text" placeholder="Search"
 							aria-label="Search">
 						<i class="fa-solid fa-magnifying-glass form-control-feedback" id="searchicon"></i>
 					</div>
-				</form>
+				</form> -->
 			</div>
 		</div>
 	</nav>
@@ -95,7 +98,7 @@
 			<div class="sidebar-wrapper">
 				<div class="panel panel-default" id="features">
 					<div class="panel-heading">
-						<h3 class="panel-title align-items-center">Points of Interest
+						<h3 class="panel-title align-items-center">Widoczne obiekty
 							<button type="button" class="btn btn-light btn-sm me-2 py-0 float-end" id="sidebar-hide-btn"><i
 									class="fa-solid fa-chevron-left"></i></button>
 						</h3>
@@ -103,11 +106,11 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-xs-8 col-md-8 pe-md-1 pe-sm-0">
-								<input type="text" class="form-control search" placeholder="Filter" />
+								<input type="text" class="form-control search" placeholder="Filtruj" />
 							</div>
 							<div class="col-xs-4 col-md-4 ps-md-1 ps-sm-0">
 								<button type="button" class="btn btn-primary sort d-none d-sm-block d-inline-flex align-items-center"
-									data-sort="feature-name" id="sort-btn"><i class="fa-solid fa-sort"></i>&nbsp;Sort</button>
+									data-sort="feature-name" id="sort-btn"><i class="fa-solid fa-sort"></i>&nbsp;Sortuj</button>
 							</div>
 						</div>
 					</div>
@@ -474,7 +477,9 @@
 	<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 	<script
 		src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
-	<script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script>
+	<!-- <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script> -->
+	<script src="assets/lib/leaflet-panel-layers.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 

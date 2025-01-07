@@ -1,0 +1,495 @@
+id;name;lat;lon;cat;subcat;url
+1;Cmentarz Bieliny;52.3517083;20.1638947;cmentarz;protestancki;
+2;cmentarz protestancki Borki;52.4493858;19.7989278;cmentarz;protestancki;
+3;Cmentarz protestancki Nowe Wymyśle;52.4235785;19.8481389;cmentarz;protestancki;
+4;cmentarz protestancki Piotrkówek;52.4006242;19.9572448;cmentarz;protestancki;
+5;Cmentarz protestancki Sady;52.4280378;19.8804246;cmentarz;protestancki;
+6;Cmentarz Januszew;52.3656317;20.1498249;cmentarz;protestancki;
+7;Cmentarz Nowa Wieś;52.3431166;20.1306449;cmentarz;protestancki;
+8;Cmentarz olederski Nowy Troszyn;52.4574321;19.8555148;cmentarz;protestancki;
+9;Cmentarz olęderski Budy Dolne;52.4991419;19.7096294;cmentarz;protestancki;
+10;Cmentarz olęderski Nowosiadlo Słubice;52.4282725;19.9225361;cmentarz;protestancki;
+11;Cmentarz olęderski Zyck Nowy;52.4137002;19.9207197;cmentarz;protestancki;
+12;Cmentarz olęderski Świniary;52.4374567;19.9005092;cmentarz;protestancki;
+13;Dawny zbór mennonicki;52.465011;19.833646;cmentarz;protestancki;
+14;Dom modlitwy mennonitów Nowe Wymyśle;52.4267342;19.8391816;cmentarz;protestancki;
+15;Mizar w Studziance;51.937022;23.213081;cmentarz;muzułmański;
+16;Mizar w Lebiedziewie-Zastawku;52.013409;23.573731;cmentarz;muzułmański;
+17;Cmentarz prawosławny w Dratowie;51.345692;22.958701;cmentarz;prawosławny;
+18;Cmentarz protestancki w Sosnowie;51.398643;21.860561;cmentarz;protestancki;
+19;Cmentarz choleryczny w Chomentowie;51.28389;21.18928;cmentarz;epidemiczny;
+20;Cmentarz twierdzy iwangorodzkiej;51.575629;21.813483;cmentarz;prawosławny;
+21;Kwatera żołnierzy Petlury;51.243972;22.549583;cmentarz;prawosławny;
+22;Cmentarz ewangelicko augsburski w Chinowie;51.604052;21.470976;cmentarz;protestancki;
+23;Cmentarz protestancki w Końskowoli;51.415542;22.05721;cmentarz;protestancki;
+24;Dawny cmentarz parafialny w Garbowie;51.347868;22.337691;cmentarz;katolicki;
+25;Dawny cmentarz parafialny w Rykach;51.6306624;21.939619;cmentarz;katolicki;
+26;Cmentarz prawosławny na Górce w Chełmie;51.133116;23.480936;cmentarz;prawosławny;
+27;Mogiłki w Walinnie;51.834204;22.996076;cmentarz;epidemiczny;
+28;Cmentarz epidemiczny i prawosławny w Rudnie;51.744985;22.944535;cmentarz;prawosławny;
+29;Cmentarz prawosławny w Cycowie;51.304165;23.122398;cmentarz;prawosławny;
+30;Cmentarz protestancki w Kozienicach;51.5724383;21.570101;cmentarz;protestancki;
+31;Cmentarz prawosławny w Łopienniku Dolnym;51.05313;23.095576;cmentarz;prawosławny;
+32;Cmentarz prawosławny w Czułczycach;51.21683;23.459365;cmentarz;prawosławny;
+33;Cmentarz protestancki w Karolinie;51.30018;21.548241;cmentarz;protestancki;
+34;Cmentarz protestancki w Józefowie Dużym;51.71763;22.323807;cmentarz;protestancki;
+35;Cmentarz protestancki w Leokadiowie;51.409406;21.782078;cmentarz;protestancki;
+36;Cmentarz protestancki w Justynowie;51.472669;22.394986;cmentarz;protestancki;
+37;Cmentarz protestancki w Kadłubku;51.10526;21.507107;cmentarz;protestancki;
+38;Cmentarz prawosławny w Opolu Lubelskim;51.160561;21.976089;cmentarz;prawosławny;
+39;Cmentarz w Witowicach;51.408924;22.074042;cmentarz;epidemiczny;
+40;Cmentarz epidemiczny w Zwichoście;50.797757;21.851331;cmentarz;epidemiczny;
+41;Cmentarz w Stoczku Łukowskim;51.957424;21.969756;cmentarz;katolicki;
+42;Stary cmentarz w Bobrownikach;51.555782;21.932698;cmentarz;katolicki;
+43;Lapidarium w Siedlcach;52.171254;22.271506;cmentarz;protestancki;
+44;Cmentarz prawosławny w Strzelcach;50.976832;23.800457;cmentarz;prawosławny;
+45;Cmentarz grekokatolicki w Buśnie;50.961941;23.733083;cmentarz;katolicki;
+46;Cmentarz protestancki w Cycowie;51.301562;23.120939;cmentarz;protestancki;
+47;Cmentarz epidemiczny w Wodyniach;52.047938;21.961709;cmentarz;epidemiczny;
+48;Cmentarz (kurhan) epidemiczny w Broku;52.699209;21.854378;cmentarz;epidemiczny;
+49;Zabytkowy cmentarz - Wszechświęte;50.865588;21.42587;cmentarz;katolicki;
+50;Cmentarz protestancki w Sobieszczanach;51.064971;22.370049;cmentarz;protestancki;
+51;Cmentarz prawosławny w Kosyniu;51.377982;23.571185;cmentarz;prawosławny;
+52;Wyryki-Adampol - cmentarz prawosławny;51.556782;23.43036;cmentarz;prawosławny;
+53;Wyryki-Wola - cmentarz prawosławny;51.563772;23.356267;cmentarz;prawosławny;
+54;Lubień - cmentarz prawosławny;51.541504;23.301247;cmentarz;prawosławny;
+55;Cmentarz epidemiczny w Puławach;51.399905;21.977939;cmentarz;epidemiczny;
+56;Cmentarz unicki w Chotyczach;52.191667;22.783284;cmentarz;protestancki;
+57;Stary cmentarz w Wisznicach;51.784568;23.215116;cmentarz;katolicki;
+58;Cmentarz protestancki w Kolonii Giżyce;51.58545;22.370265;cmentarz;protestancki;
+59;Rossosz - dawny cmentarz unicki i katolicki;51.862672;23.141347;cmentarz;katolicki;
+60;Rossosz - cmentarz prawosławny;51.861857;23.141668;cmentarz;prawosławny;
+61;Szwedzka mogiła w Zienkach;51.4773868;23.0960624;cmentarz;katolicki;
+62;Cmentarz prawosławny w Woli Wereszczyńskiej;51.426307;23.144199;cmentarz;prawosławny;
+63;Cmentarz prawosławny w Wereszczynie;51.356775;23.214474;cmentarz;prawosławny;
+64;Cmentarz protestancki w Michałowie;51.39792;23.201019;cmentarz;protestancki;
+65;Cmentarz protestancki w Dębowcu;51.388361;23.17469;cmentarz;protestancki;
+66;Cmentarz prawosławny w Sosnowicy;51.5200395;23.0810308;cmentarz;prawosławny;
+67;Mołodiatycze - cmentarz prawosławny;50.809867;23.7021017;cmentarz;prawosławny;
+68;Zwoleń - cmentarz epidemiczny;51.3575256;21.5776312;cmentarz;epidemiczny;
+69;Nowa Wieś - cmentarz protestancki;51.0936178;21.5366042;cmentarz;protestancki;
+70;Góra Kalwaria - cmentarz protestancki;51.9848801;21.1941183;cmentarz;protestancki;
+71;Mikówiec - cmentarz protestancki;51.9948036;21.1590886;cmentarz;protestancki;
+72;Kępa Zawadowska - cmentarz protestancki;52.151631;21.1293912;cmentarz;protestancki;
+73;Kępa Okrzewska - cmentarz protestancki;52.1347129;21.1530697;cmentarz;protestancki;
+74;Kania Nowa - cmentarz protestancki;52.5214551;21.1195502;cmentarz;protestancki;
+75;Miszory - cmentarz protestancki;52.3445424;20.3238487;cmentarz;protestancki;
+76;Piaski Duchowne - cmentarz protestancki;52.3736604;20.3913116;cmentarz;protestancki;
+77;Warszawa Bródno - cmentarz epidemiczny;52.2684988;21.0297954;cmentarz;epidemiczny;
+78;Nowy Dwór Mazowiecki - cmentarz protestancki;52.4255751;20.7141799;cmentarz;protestancki;
+79;Wierzbica - cmentarz epidemiczny;51.2570237;21.1037788;cmentarz;epidemiczny;
+80;Katarzynów - cmentarz epidemiczny i wojenny;51.5654532;21.5275919;cmentarz;epidemiczny;
+81;Agatówka - cmentarz wojenny i epidemiczny;50.6029066;22.0050573;cmentarz;epidemiczny;
+82;Cmentarz protestancki w Czerwińsku nad Wisłą;52.3951459;20.3262091;cmentarz;protestancki;
+83;Stupsk - stary cmentarz parafialny;53.02045;20.4303861;cmentarz;katolicki;
+84;Cmentarz protestancki w Dębówce;52.1814582;20.3394055;cmentarz;protestancki;
+85;Cmentarz protestancki w Elżbietowie;52.1796096;20.3684163;cmentarz;protestancki;
+86;Brzozów Stary - kaplica grobowa;52.2953178;20.034256;cmentarz;katolicki;
+87;Brzozów Stary - stary cmentarz parafialny;52.2938677;20.0313913;cmentarz;katolicki;
+88;Iłów - cmentarz protestancki;52.340544;20.0367344;cmentarz;protestancki;
+89;Łady - cmentarz protestancki;52.366982;20.076341;cmentarz;protestancki;
+90;Cmentarz protestancki w Płatkownicy;52.673244;21.8404336;cmentarz;protestancki;
+91;Sojkówek - cmentarz protestancki;52.65524;21.8276629;cmentarz;protestancki;
+92;Władysławów - cmentarz protestancki;52.329661;20.353924;cmentarz;protestancki;
+93;Paproć Duża - cmentarz protestancki;52.8666053;22.1452438;cmentarz;protestancki;
+94;Wilkowice - cmentarz protestancki;51.8883964;16.5262158;cmentarz;protestancki;
+95;Warszawa - cmentarz staroobrzędowców;52.2458415;21.0662591;cmentarz;katolicki;
+96;Warszawa - cmentarz epidemiczny w Głodnej Wsi;52.2953328;21.0491662;cmentarz;epidemiczny;
+97;Warszawa Białołęka - cmentarz protestancki w Augustówku;52.349946;21.0538467;cmentarz;protestancki;
+98;Warszawa Białołęka - cmentarz protestancki w Brzezinach;52.3154833;21.0438335;cmentarz;protestancki;
+99;Warszawa Białołęka - cmentarz protestancki w Kępie Tarchomińskiej;52.3461125;20.9290004;cmentarz;protestancki;
+100;Marki (Pustelnik) - cmentarz protestancki;52.34494;21.10529;cmentarz;protestancki;
+101;Michałów-Grabina - cmentarz protestancki;52.3646717;21.0152742;cmentarz;protestancki;
+102;Aleksandrów - cmentarz protestancki;52.17884;21.23776;cmentarz;protestancki;
+103;Jadów - cmentarz szkocki;52.4736625;21.6104705;cmentarz;protestancki;
+104;Sarnaki - stary cmentarz katolicki;52.3115668;22.8856701;cmentarz;katolicki;
+105;Jabłonna Lacka - cmentarz epidemiczny;52.46558;22.44452;cmentarz;epidemiczny;
+106;Młynarze - cmentarz protestancki;52.5331785;21.3661735;cmentarz;protestancki;
+107;Uzdowo - cmentarz protestancki;53.341847;20.1061158;cmentarz;protestancki;
+108;Elbląg - cmentarz protestancki (ul. Obrońców Pokoju);54.18109;19.39788;cmentarz;protestancki;
+109;Ciechanowiec - cmentarz protestancki;52.68452;22.518;cmentarz;protestancki;
+110;Aleksandrów (Izabelin) - cmentarz protestancki;52.3995649;21.057483;cmentarz;protestancki;
+111;Stanisławów Pierwszy - cmentarz protestancki;52.3891361;21.0338286;cmentarz;protestancki;
+112;Józefów - cmentarz protestancki;52.3838094;21.0033653;cmentarz;protestancki;
+113;Rajszew - cmentarz protestancki;52.3940459;20.8362467;cmentarz;protestancki;
+114;Łomianki - cmentarz protestancki;52.3318658;20.8795142;cmentarz;protestancki;
+115;Dziekanów Leśny - cmentarz protestancki;52.34437;20.85611;cmentarz;protestancki;
+116;Karolinów - cmentarz protestancki;52.31694;20.39761;cmentarz;protestancki;
+117;Kępa Kiełpińska - cmentarz protestancki;52.37124;20.88425;cmentarz;protestancki;
+118;Famułki Łazowskie - cmentarz protestancki;52.32836;20.38397;cmentarz;protestancki;
+119;Nowe Grochale - cmentarz protestancki;52.41642;20.58829;cmentarz;protestancki;
+120;Sady - cmentarz protestancki;52.41172;20.64511;cmentarz;protestancki;
+121;Radzymin - cmentarz protestancki;52.40793;21.17091;cmentarz;protestancki;
+122;Kozienice - cmentarz Dehnów;51.58722;21.5550184;cmentarz;protestancki;
+123;Holendry Kuźmińskie - cmentarz protestancki i wojenny;51.6444112;21.530327;cmentarz;protestancki;
+124;Wilków nad Wisłą - cmentarz protestancki;52.40421;20.47463;cmentarz;protestancki;
+125;Ciechanowiec - cmentarz prawosławny;52.68526;22.51976;cmentarz;protestancki;
+126;Skierdy - cmentar mennonicki;52.40386;20.80967;cmentarz;protestancki;
+127;Bąkowiec - cmentarz epidemiczny;51.49857;21.76088;cmentarz;epidemiczny;
+128;Polesie - cmentarz protestancki;51.39824;21.77838;cmentarz;protestancki;
+129;Kuroszów - cmentarz protestancki;51.39389;21.80015;cmentarz;protestancki;
+130;Kazuń Nowy - cmentarz mennonicki;52.4179021;20.6906679;cmentarz;protestancki;
+131;Nowy Modlin - cmentarz protestancki;52.452712;20.6896074;cmentarz;protestancki;
+132;Tyborów - cmentarz protestancki;52.1609319;21.6624493;cmentarz;protestancki;
+133;Arynów - cmentarz protestancki;52.20854;21.54371;cmentarz;protestancki;
+134;Nowy Modlin - wojskowy cmentarz prawosławny;52.4561713;20.7082631;cmentarz;katolicki;
+135;Skansen i cmentarz olęderski Wiączemin Polski;52.4441794;19.8755016;cmentarz;protestancki;
+136;Cmentarz ewangelicko-augsburski w Starej Dąbrowie;51.80564;18.74487;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-starej-dabrowie/
+137;Cmentarz ewangelicko-augsburski w Karolinie;51.83166;18.46901;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-karolinie/
+138;Cmentarz ewangelicko-augsburski w Stanisławowie Studzińskim;51.67783;20.10527;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stanislawowie-studzinskim/
+139;Cmentarz ewangelicko-augsburski w Stanisławowie Lipskim;51.70221;20.14008;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stanislawowie-lipskim/
+140;Kwatera ewangelicka na cmentarzu w Radomsku;51.06322;19.45464;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/kwatera-ewangelicka-na-cmentarzu-w-radomsku/
+141;Cmentarz ewangelicko-augsburski w Krzeczowie;51.1843;18.76682;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-krzeczowie/
+142;Cmentarz ewangelicko-augsburski w Nepomucenowie;51.6614;19.99144;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-nepomucenowie/
+143;Cmentarz ewangelicko-augsburski w Aleksandrowie;51.62769;19.86927;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-aleksandrowie/
+144;Cmentarz ewangelicko-augsburski w Swobodzie;51.32885;18.48625;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-swobodzie/
+145;Cmentarz ewangelicko-augsburski w Chociszewie;51.67795;20.08065;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-chociszewie/
+146;Cmentarz ewangelicko-augsburski w Augustowie;51.28585;19.0777;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-augustowie-2/
+147;Cmentarz ewangelicko-augsburski w Maksymowie;51.57645;19.87629;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-maksymowie/
+148;Cmentarz ewangelicko-augsburski w Konradowie;51.09491;19.53334;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-konradowie/
+149;Cmentarz ewangelicko-augsburski w Dziepółci;51.05157;19.52605;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-dziepolci/
+150;Cmentarz ewangelicko-augsburski w Antoniowie;51.13423;19.56848;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-antoniowie/
+151;Cmentarz ewangelicko-augsburski w Świniokierzu Włościańskim;51.6831;19.9875;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-swiniokierzu-wloscianskim/
+152;Cmentarz ewangelicko-augsburski w Łasku;51.5921;19.14165;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lasku/
+153;Cmentarz ewangelicko-augsburski w Stanisławowie Pierwszym;51.29533;19.11765;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stanislawowie-pierwszym/
+154;Cmentarz ewangelicko-augsburski w Józefowie;51.13947;18.55281;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-jozefowie/
+155;Cmentarz ewangelicko-augsburski w Rakowie;51.43753;19.7196;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rakowie/
+156;Cmentarz ewangelicko-augsburski w Konstantynowie;51.08872;19.10285;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-konstantynowie-2/
+157;Cmentarz ewangelicko-augsburski w Woli Mikorskiej;51.39752;19.3209;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-woli-mikorskiej/
+158;Cmentarz ewangelicko-augsburski w Hucie Brudzkiej;51.18269;19.39784;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-hucie-brudzkiej/
+159;Cmentarz ewangelicko-augsburski w Łaznowskiej Woli;51.66532;19.7404;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-laznowskiej-woli/
+160;Cmentarz ewangelicko-augsburski w Oprzężowie;51.39741;19.55944;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-oprzezowie/
+161;Cmentarz ewangelicko-augsburski w Popielawach;51.61733;19.83952;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-popielawach/
+162;Cmentarz ewangelicko-augsburski w Żakowicach;51.73964;19.79293;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zakowicach/
+163;Cmentarz ewangelicko-augsburski w Żabieńcu;51.80918;19.41214;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zabiencu/
+164;Cmentarz ewangelicko-augsburski w Zofiówce;51.60646;19.45346;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zofiowce/
+165;Cmentarz ewangelicko-augsburski w Zimnych;52.06335;19.02172;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zimnych/
+166;Cmentarz ewangelicko-augsburski w Zielonej Górze;51.70038;19.6955;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zielonej-gorze/
+167;Cmentarz ewangelicko-augsburski w Zgórzu;52.2712;19.09078;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zgorzu/
+168;Cmentarz ewangelicko-augsburski w Zgierzu;51.85642;19.42809;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zgierzu/
+169;Cmentarz ewangelicko-augsburski w Zborowskich;51.66414;18.8252;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zborowskich/
+170;Cmentarz ewangelicko-augsburski w Zawadach;52.05004;19.9569;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zawadach-2/
+171;Cmentarz ewangelicko-augsburski w Zawadach;51.39239;19.36749;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zawadach/
+172;Cmentarz ewangelicko-augsburski w Zabłotach;51.52018;19.26565;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-zablotach/
+173;Cmentarz ewangelicko-augsburski w Wytrzyszczkach;51.94917;19.23809;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wytrzyszczkach/
+174;Cmentarz ewangelicko-augsburski w Wysieradzu;51.68227;19.22467;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wysieradzu/
+175;Cmentarz ewangelicko-augsburski w Wymysłowie Francuskim;51.67601;19.23422;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wymyslowie-francuskim/
+176;Cmentarz ewangelicko-augsburski w Wyknie;51.62923;19.91899;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wyknie/
+177;Cmentarz ewangelicko-augsburski w Wygorzelach;52.19643;19.05769;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wygorzelach/
+178;Cmentarz ewangelicko-augsburski w Wolnicy Grabowskiej;51.43959;18.75166;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wolnicy-grabowskiej/
+179;Cmentarz ewangelicko-augsburski w Woli Rakowej;51.67409;19.60877;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-woli-rakowej/
+180;Cmentarz ewangelicko-augsburski w Woli Będkowskiej;51.48782;18.74586;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-woli-bedkowskiej/
+181;Cmentarz ewangelicko-augsburski w Władysławowie;51.97944;19.49962;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wladyslawowie/
+182;Cmentarz ewangelicko-augsburski w Wilkowie;51.8337;19.06013;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wilkowie/
+183;Cmentarz ewangelicko-augsburski w Wilczycy;51.85162;19.04817;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wilczycy/
+184;Cmentarz ewangelicko-augsburski w Wiączyniu Górnym;51.7634;19.61499;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-wiaczyniu-gornym/
+185;Cmentarz ewangelicko-augsburski w Brzezinach;51.98932;18.80091;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-brzezinach-2/
+186;Cmentarz ewangelicko-augsburski w Tuszynie;51.60239;19.53282;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-tuszynie/
+187;Cmentarz ewangelicko-augsburski w Trząsie;51.29027;19.22009;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-trzasie/
+188;Cmentarz ewangelicko-augsburski w Truszczanku;51.28218;19.56429;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-truszczanku/
+189;Cmentarz ewangelicko-augsburski w Tkaczewskiej Górze;51.89939;19.25766;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-tkaczewskiej-gorze/
+190;Cmentarz ewangelicko-augsburski w Teolinie;51.7991;19.63605;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-teolinie/
+191;Cmentarz ewangelicko-augsburski w Teodorowie;51.68242;19.94607;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-teodorowie/
+192;Cmentarz ewangelicko-augsburski w Taurowie;51.74999;19.99224;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-taurowie/
+193;Cmentarz ewangelicko-augsburski w Syskach;51.40224;20.05458;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-syskach/
+194;Cmentarz ewangelicko-augsburski w Swędowie;51.90333;19.54801;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-swedowie/
+195;Cmentarz ewangelicko-augsburski w Strykowie;51.89888;19.60604;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-strykowie/
+196;Cmentarz ewangelicko-augsburski w Stokach;51.44349;19.35055;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stokach/
+197;Cmentarz ewangelicko-augsburski w Stoczkach;51.37273;19.98101;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stoczkach/
+198;Cmentarz ewangelicko-augsburski w Stępowiźnie;51.86736;19.44006;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stepowiznie/
+199;Cmentarz ewangelicko-augsburski w Starowej Górze;51.68529;19.47572;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-starowej-gorze/
+200;Cmentarz ewangelicko-augsburski w Stanisławowie Nowym;51.79327;19.19902;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stanislawowie-nowym/
+201;Cmentarz ewangelicko-augsburski w Stamirowicach;51.73719;19.88081;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-stamirowicach/
+202;Cmentarz ewangelicko-augsburski w Słowiku;51.92918;19.35032;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-slowiku/
+203;Cmentarz ewangelicko-augsburski w Słotwinach;51.7267;19.84785;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-slotwinach/
+204;Cmentarz ewangelicko-augsburski w Skotnikach;51.86036;19.48256;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-skotnikach/
+205;Cmentarz ewangelicko-augsburski w Rydzynach;51.62761;19.40692;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rydzynach/
+206;Cmentarz ewangelicko-augsburski w Rudunkach;51.87655;19.44463;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rudunkach/
+207;Cmentarz ewangelicko-augsburski w Rudzie Bugaj;51.83679;19.27818;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rudzie-bugaj/
+208;Cmentarz ewangelicko-augsburski w Rosanowie;51.9099;19.38328;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rosanowie/
+209;Cmentarz ewangelicko-augsburski w Romartowie;52.14612;19.25789;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-romartowie/
+210;Cmentarz ewangelicko-augsburski w Rokitnicy;51.56988;19.22835;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rokitnicy/
+211;Cmentarz ewangelicko-augsburski w Rogowcu;51.27686;19.30645;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rogowcu/
+212;Cmentarz ewangelicko-augsburski w Rochowie;52.19897;19.01486;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rochowie/
+213;Cmentarz ewangelicko-augsburski w Ręszewie;51.44483;18.71702;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-reszewie/
+214;Cmentarz ewangelicko-augsburski w Reksule;51.88725;19.24065;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-reksule/
+215;Cmentarz ewangelicko-augsburski w Rąbinku;51.78255;19.29015;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rabinku/
+216;Cmentarz ewangelicko-augsburski w Rąbieniu;51.78904;19.32187;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rabieniu/
+217;Cmentarz ewangelicko-augsburski w Rasach;51.41793;19.38523;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-rasach/
+218;Cmentarz ewangelicko-augsburski w Radogoszczu;51.80628;19.4414;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-radogoszczu/
+219;Cmentarz ewangelicko-augsburski w Pustkowej Górze;51.90815;19.26771;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pustkowej-gorze/
+220;Cmentarz ewangelicko-augsburski w Przyłęku Małym;51.85221;19.89933;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-przyleku-malym/
+221;Cmentarz ewangelicko-augsburski w Przybyszowie;51.02815;19.59045;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-przybyszowie/
+222;Cmentarz ewangelicko-augsburski w Przedborzu;51.0821;19.85935;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-przedborzu/
+223;Cmentarz ewangelicko-augsburski w Przanowicach;51.74379;19.77634;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-przanowicach/
+224;Cmentarz ewangelicko-augsburski w Proboszczewicach;51.86875;19.39125;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-proboszczewicach/
+225;Cmentarz ewangelicko-augsburski w Pratkowie;51.67589;18.88256;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pratkowie/
+226;Cmentarz ewangelicko-augsburski w Polichnie;51.45932;19.80067;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-polichnie/
+227;Cmentarz ewangelicko-augsburski w Polamach;52.15585;18.93407;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-polamach/
+228;Cmentarz ewangelicko-augsburski w Podwiączyniu;51.76158;19.63256;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-podwiaczyniu/
+229;Cmentarz ewangelicko-augsburski w Poddębicach;51.88936;18.9689;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-poddebicach/
+230;Cmentarz ewangelicko-augsburski w Placydowie;51.8124;19.25806;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-placydowie/
+231;Cmentarz ewangelicko-augsburski w Piaskowej Górze;51.80696;19.3019;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-piaskowej-gorze/
+232;Cmentarz ewangelicko-augsburski w Piaskach;52.04103;18.98406;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-piaskach/
+233;Cmentarz ewangelicko-augsburski w Pawlikowicach;51.61353;19.36163;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pawlikowicach/
+234;Cmentarz ewangelicko-augsburski w Pawłowie Dolnym;51.30203;19.49493;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pawlowie-dolnym/
+235;Cmentarz ewangelicko-augsburski w Pawłowej;51.49616;19.32499;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pawlowej/
+236;Cmentarz ewangelicko-augsburski w Pabianicach;51.65601;19.35433;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-pabianicach/
+237;Cmentarz ewangelicko-augsburski w Ozorkowie;51.95368;19.30507;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ozorkowie/
+238;Cmentarz ewangelicko-augsburski w Ostrówku;51.34593;18.6032;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ostrowku/
+239;Cmentarz ewangelicko-augsburski w Osinach;52.17308;18.94855;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-osinach/
+240;Cmentarz ewangelicko-augsburski w Olszewicach;51.44821;20.10159;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-olszewicach/
+241;Cmentarz ewangelicko-augsburski w Olechowie;51.74359;19.56009;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-olechowie/
+242;Cmentarz ewangelicko-augsburski w Okupie Małym;51.58878;19.07381;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-okupie-malym/
+243;Cmentarz ewangelicko-augsburski w Odzieradach;51.78584;19.3793;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-odzieradach/
+244;Cmentarz ewangelicko-augsburski w Nowosolnej;51.79497;19.58744;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-nowosolnej/
+245;Cmentarz ewangelicko-augsburski w Nowych Błogich;51.37602;19.94091;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-nowych-blogich/
+246;Cmentarz ewangelicko-augsburski w Myszakach;51.37957;19.41764;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-myszakach/
+247;Cmentarz ewangelicko-augsburski w Moskulikach;51.80865;19.54058;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-moskulikach/
+248;Cmentarz ewangelicko-augsburski w Młoszowie;51.47324;19.90989;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-mloszowie/
+249;Cmentarz ewangelicko-augsburski w Mikołajowie;51.69443;19.83734;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-mikolajowie/
+250;Cmentarz ewangelicko-augsburski w Mikołajewie;52.09219;19.11431;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-mikolajewie/
+251;Cmentarz ewangelicko-augsburski w Michałopolu;50.90133;19.5531;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-michalopolu/
+252;Cmentarz ewangelicko-augsburski w Mariampolu;51.90578;19.2258;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-mariampolu/
+253;Cmentarz ewangelicko-augsburski w Meszczach;51.43178;19.74626;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-meszczach/
+254;Cmentarz ewangelicko-augsburski w Marianowie Rogowskim;51.8108;19.90055;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-marianowie-rogowskim/
+255;Cmentarz ewangelicko-augsburski w Marcinowie;51.90804;19.13601;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-marcinowie/
+256;Cmentarz ewangelicko-augsburski w Maksymilianowie;51.65417;19.85494;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-maksymilianowie/
+257;Cmentarz ewangelicko-augsburski w Łuszczanowicach-Kolonii;51.2056;19.28448;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-luszczanowicach-kolonii/
+258;Cmentarz ewangelicko-augsburski w Łobudzicach;51.73876;19.02344;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lobudzicach/
+259;Cmentarz ewangelicko-augsburski w Łęczycy;52.04625;19.20776;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-leczycy/
+260;Cmentarz ewangelicko-augsburski w Łączkowicach;51.63925;19.87687;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-laczkowicach/
+261;Cmentarz ewangelicko-augsburski w Łaskowicach;51.71223;19.37739;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-laskowicach/
+262;Cmentarz ewangelicko-augsburski w Lubiaszowie;51.43139;19.89273;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lubiaszowie/
+263;Cmentarz ewangelicko-augsburski w Lipinach;51.80927;19.67626;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lipinach/
+264;Cmentarz ewangelicko-augsburski w Lipiankach;51.62418;19.88907;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lipiankach/
+265;Cmentarz ewangelicko-augsburski w Leśniku-Olędrach;51.89729;18.76443;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lesniku-oledrach/
+266;Cmentarz ewangelicko-augsburski w Lesznie;52.09352;18.93516;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lesznie/
+267;Cmentarz ewangelicko-augsburski w Lesiopolu;51.20508;19.79037;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lesiopolu/
+268;Cmentarz ewangelicko-augsburski w Leosinie;51.73683;19.8852;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-leosinie/
+269;Cmentarz ewangelicko-augsburski w Leonowie;51.45473;19.91316;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-leonowie/
+270;Cmentarz ewangelicko-augsburski w Lesie Pobłociszewskich;51.66408;19.27742;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-lesie-poblociszewskich/
+271;Cmentarz ewangelicko-augsburski w Kurówku;51.46876;19.15208;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kurowku/
+272;Cmentarz ewangelicko-augsburski w Kurnosie;51.32541;19.30185;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kurnosie/
+273;Cmentarz ewangelicko-augsburski w Kudrowicach;51.68472;19.29347;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kudrowicach/
+274;Cmentarz ewangelicko-augsburski w Księstwie;51.84241;19.29238;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ksiestwie/
+275;Cmentarz ewangelicko-augsburski w Ksawerowie;52.16443;19.02217;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ksawerowie/
+276;Cmentarz ewangelicko-augsburski w Krzemieniewie;51.89108;19.07095;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-krzemieniewie/
+277;Cmentarz ewangelicko-augsburski w Krerach;51.12247;19.75137;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-krerach/
+278;Cmentarz ewangelicko-augsburski w Krasnodębach Starych;51.87668;19.22152;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-krasnodebach-starych/
+279;Cmentarz ewangelicko-augsburski w Korablewie;51.34557;19.03225;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-korablewie/
+280;Cmentarz ewangelicko-augsburski w Kontrewersie;51.83124;19.11323;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kontrewersie/
+281;Cmentarz ewangelicko-augsburski w Konstantynówku;51.75012;19.29897;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-konstantynowku/
+282;Cmentarz ewangelicko-augsburski w Konstantynowie;52.24908;20.03561;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-konstantynowie/
+283;Cmentarz ewangelicko-augsburski w Konstantynowie Łódzkim;51.74083;19.32069;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-konstantynowie-lodzkim/
+284;Cmentarz ewangelicko-augsburski i reformowany w Kolonii Pożdżenice;51.45902;19.18555;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-i-reformowany-w-kolonii-pozdzenice/
+285;Cmentarz ewangelicko-augsburski w Kolonii Łyszkowice;51.97351;19.93015;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kolonii-lyszkowice/
+286;Cmentarz ewangelicko-augsburski w Kociszewie;51.49282;19.30401;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kociszewie/
+287;Cmentarz ewangelicko-augsburski w Kobylach;52.13791;18.9482;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kobylach/
+288;Cmentarz ewangelicko-augsburski w Klementynowie;51.29179;19.85243;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-klementynowie/
+289;Cmentarz ewangelicko-augsburski w Kępinie;52.18382;18.98112;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kepinie/
+290;Cmentarz ewangelicko-augsburski w Kęblinach;51.92822;19.51898;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-keblinach/
+291;Cmentarz ewangelicko-augsburski w Katarzynowie;51.73887;19.85779;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-katarzynowie-2/
+292;Cmentarz ewangelicko-augsburski w Katarzynowie;51.95707;19.39922;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-katarzynowie/
+293;Cmentarz ewangelicko-augsburski w Karolinowie;51.88851;19.18102;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-karolinowie/
+294;Cmentarz ewangelicko-augsburski w Karolewie;52.10839;20.11379;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-karolewie-2/
+295;Cmentarz ewangelicko-augsburski w Karolewie;51.75508;19.41653;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-karolewie/
+296;Cmentarz ewangelicko-augsburski w Kamocinie;51.46173;19.5854;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kamocinie/
+297;Cmentarz ewangelicko-augsburski w Kamieniu;51.25883;19.21693;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kamieniu/
+298;Cmentarz ewangelicko-augsburski w Kałdunach;51.40958;19.37285;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kaldunach/
+299;Cmentarz ewangelicko-augsburski w Kalinie;51.66825;19.55974;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-kalinie/
+300;Cmentarz ewangelicko-augsburski w Justynowie;51.72682;19.68328;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-justynowie/
+301;Cmentarz ewangelicko-augsburski w Jordanowie;51.75473;19.66744;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-jordanowie/
+302;Cmentarz ewangelicko-augsburski w Jasieniu;51.83765;19.83125;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-jasieniu/
+303;Cmentarz ewangelicko-augsburski w Jarostach;51.45661;19.69074;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-jarostach/
+304;Cmentarz ewangelicko-augsburski w Janowie;51.75978;19.55639;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-janowie-3/
+305;Cmentarz ewangelicko-augsburski w Janowie;52.16511;18.95934;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-janowie-2/
+306;Cmentarz ewangelicko-augsburski w Janowie;51.90343;19.78912;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-janowie/
+307;Cmentarz ewangelicko-augsburski w Hucie Porajskiej;51.26788;19.52522;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-hucie-porajskiej/
+308;Cmentarz ewangelicko-augsburski w Hucie Bardzyńskiej;51.90815;19.16541;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-hucie-bardzynskiej/
+309;Cmentarz ewangelicko-augsburski w Holendrach Paprockich;51.57397;18.91351;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-holendrach-paprockich/
+310;Cmentarz ewangelicko-augsburski w Grabowie;52.13208;19.01686;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-grabowie/
+311;Cmentarz ewangelicko-augsburski w Grabinie;51.81789;19.5897;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-grabinie/
+312;Cmentarz ewangelicko-augsburski w Grabieńcu;51.79438;19.37042;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-grabiencu/
+313;Cmentarz ewangelicko-augsburski w Górkach Starych;51.70995;19.5102;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-gorkach-starych/
+314;Cmentarz ewangelicko-augsburski w Gościmowicach;51.53881;19.68487;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-goscimowicach/
+315;Cmentarz ewangelicko-augsburski w Gorzewie;51.71472;19.34194;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-gorzewie/
+316;Cmentarz ewangelicko-augsburski w Głogowcu;51.83411;19.64886;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-glogowcu/
+317;Cmentarz ewangelicko-augsburski w Głąbiu;51.85806;19.61697;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-glabiu/
+318;Cmentarz ewangelicko-augsburski w Glinniku;51.88298;19.48712;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-glinniku/
+319;Cmentarz ewangelicko-augsburski w Gągolinie Zachodnim;52.18013;20.04948;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-gagolinie-zachodnim/
+320;Cmentarz ewangelicko-augsburski w Gałkówku-Kolonii;51.75739;19.71856;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-galkowku-kolonii/
+321;Cmentarz ewangelicko-augsburski w Gaju;51.75216;19.75556;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-gaju/
+322;Cmentarz ewangelicko-augsburski w Frankach Wroczyńskich;52.20912;19.27912;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-frankach-wroczynskich/
+323;Cmentarz ewangelicko-augsburski w Florentynowie;51.07459;19.52265;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-florentynowie-2/
+324;Cmentarz ewangelicko-augsburski w Florentynowie;51.73617;19.28838;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-florentynowie/
+325;Cmentarz ewangelicko-augsburski w Feliksowie;51.07351;19.64967;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-feliksowie-2/
+326;Cmentarz ewangelicko-augsburski w Feliksowie;51.82044;18.99115;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-feliksowie/
+327;Cmentarz ewangelicko-augsburski w Felicjanowie;51.75528;19.83164;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-felicjanowie/
+328;Cmentarz ewangelicko-reformowany w Faustynowie;51.40134;19.11093;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-reformowany-w-faustynowie/
+329;Cmentarz ewangelicko-augsburski w Ewcinie;51.76874;19.82498;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ewcinie/
+330;Cmentarz ewangelicko-augsburski w Erazmowie;51.76874;19.82498;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-erazmowie/
+331;Cmentarz ewangelicko-augsburski w Drzewocinach;51.53727;19.29019;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-drzewocinach/
+332;Cmentarz ewangelicko-augsburski w Dąbrówce Górnej;51.87176;19.13344;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-dabrowce-gornej/
+333;Cmentarz ewangelicko-augsburski w Dąbrowie;51.73963;19.51314;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-dabrowie-2/
+334;Cmentarz ewangelicko-augsburski w Dąbrowie;52.03262;18.82726;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-dabrowie/
+335;Cmentarz ewangelicko-augsburski w Dąbiu;52.09603;18.8241;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-dabiu/
+336;Cmentarz ewangelicko-augsburski w Danielowie;51.23863;19.49642;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-danielowie/
+337;Cmentarz ewangelicko-augsburski w Czyżeminku;51.64439;19.44465;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-czyzeminku/
+338;Cmentarz ewangelicko-augsburski w Ciosnach;51.63572;19.86626;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-ciosnach/
+339;Cmentarz ewangelicko-augsburski w Brzezinach;51.81067;19.76061;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-brzezinach/
+340;Cmentarz ewangelicko-augsburski w Chorzeszowie;51.68906;19.14062;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-chorzeszowie/
+341;Cmentarz ewangelicko-augsburski w Chorzepinie;52.06545;18.87677;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-chorzepinie/
+342;Cmentarz ewangelicko-augsburski w Chechle;51.64397;19.28882;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-chechle/
+343;Cmentarz ewangelicko-augsburski w Cesarce-Warszewicach;51.8769;19.61343;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-cesarce-warszewicach/
+344;Cmentarz ewangelicko-augsburski w Bukowcu;51.68997;19.66865;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-bukowcu/
+345;Cmentarz ewangelicko-augsburski w Bugaju;52.13511;18.9832;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-bugaju/
+346;Cmentarz ewangelicko-augsburski w Bukowcu Górnym;51.82118;19.57968;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-bukowcu-gornym/
+347;Cmentarz ewangelicko-augsburski w Borowej;51.70714;19.73271;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-borowej/
+348;Cmentarz ewangelicko-augsburski w Bogusławowie;50.98066;19.70907;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-boguslawowie/
+349;Cmentarz ewangelicko-augsburski w Boginii;51.84121;19.62258;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-boginii/
+350;Cmentarz ewangelicko-augsburski w Białej;51.92072;19.4563;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-bialej/
+351;Cmentarz ewangelicko-augsburski w Bełchatowie;51.36265;19.35864;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-belchatowie/
+352;Cmentarz ewangelicko-augsburski w Bechcicach-Kolonii;51.7452;19.2474;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-bechcicach-kolonii/
+353;Cmentarz ewangelicko-augsburski w Bądkowie;51.95088;19.42633;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-badkowie/
+354;Cmentarz ewangelicko-augsburski w Babiczkach;51.78345;19.26852;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-babiczkach/
+355;Cmentarz ewangelicko-augsburski w Babicach;51.77133;19.25113;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-babicach/
+356;Cmentarz ewangelicko-augsburski w Augustowie;51.74568;19.54168;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-augustowie/
+357;Cmentarz ewangelicko-augsburski w Augustopolu;52.34082;19.08463;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-augustopolu/
+358;Cmentarz ewangelicko-augsburski w Antoniewie;51.78707;19.51221;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-antoniewie-2/
+359;Cmentarz ewangelicko-augsburski w Antoniewie;51.78906;19.3488;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-antoniewie/
+360;Cmentarz ewangelicko-augsburski w Annopolach Starych;51.65697;18.8467;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-annopolach-starych/
+361;Cmentarz ewangelicko-augsburski w Aleksandrowie Łódzkim;51.81905;19.31237;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-aleksandrowie-lodzkim/
+362;Cmentarz ewangelicko-augsburski w Anielinie;51.62865;19.11898;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-anielinie/
+363;Cmentarz ewangelicko-augsburski w Andrzejowie;51.73609;19.61743;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-andrzejowie/
+364;Cmentarz ewangelicko-augsburski w Albertowie;51.67743;19.83435;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-albertowie/
+365;Cmentarz ewangelicko-augsburski w Adamowie Starym;51.83924;19.2287;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-adamowie-starym/
+366;Cmentarz ewangelicko-augsburski w Adamowie;51.77313;19.68502;cmentarz;protestancki;https://osadnicy.info/miejsca/cmentarze/cmentarz-ewangelicko-augsburski-w-adamowie/
+367;Rezydencja rodziny Schlösserów w Ozorkowie;51.96432;19.28928;domy;;https://osadnicy.info/miejsca/domy/rezydencja-rodziny-schlosserow-w-ozorkowie/
+368;Rezydencja rodziny Scheiblerów w Ozorkowie;51.9671;19.28281;domy;;https://osadnicy.info/miejsca/domy/rezydencja-rodziny-scheiblerow-w-ozorkowie/
+369;Dom Karla Müllera w Zgierzu;51.85781;19.41412;domy;;https://osadnicy.info/miejsca/domy/dom-karla-mullera-w-zgierzu/
+370;Dom Hieronima Vogta w Zgierzu;51.85631;19.4142;domy;;https://osadnicy.info/miejsca/domy/dom-hieronima-vogta-w-zgierzu/
+371;Dom Gottlieba Krusche w Pabianicach;51.66446;19.35645;domy;;https://osadnicy.info/miejsca/domy/dom-gottlieba-krusche-w-pabianicach/
+372;Dom Gottfrieda Wolfa w Zgierzu;51.85636;19.40964;domy;;https://osadnicy.info/miejsca/domy/dom-gottfrieda-wolfa-w-zgierzu/
+373;Dom Gottfrieda Filipa w Zgierzu;51.85682;19.41498;domy;;https://osadnicy.info/miejsca/domy/dom-gottfrieda-filipa-w-zgierzu/
+374;Dom Friedricha Augusta Krusche w Pabianicach;51.66458;19.3538;domy;;https://osadnicy.info/miejsca/domy/dom-friedricha-augusta-krusche-w-pabianicach/
+375;Dom Christiana Wilhelma Wernera w Ozorkowie;51.96731;19.28299;domy;;https://osadnicy.info/miejsca/domy/dom-christiana-wilhelma-wernera-w-ozorkowie/
+376;Dom Beniamina Krusche w Pabianicach;51.66455;19.35414;domy;;https://osadnicy.info/miejsca/domy/dom-beniamina-krusche-w-pabianicach/
+377;Dom Johanna Lebelta w Zgierzu;51.85529;19.41339;domy;;https://osadnicy.info/miejsca/domy/dom-johanna-lebelta-w-zgierzu/
+378;Dom Josepha Perschela w Zgierzu;51.85586;19.41406;domy;;https://osadnicy.info/miejsca/domy/dom-josepha-perschela-w-zgierzu/
+379;Dom Jana Samuela Zacherta w Zgierzu;51.85468;19.41564;domy;;https://osadnicy.info/miejsca/domy/dom-jana-samuela-zacherta-w-zgierzu/
+380;Dom Karla Borsta w Zgierzu;51.85673;19.41434;domy;;https://osadnicy.info/miejsca/domy/dom-karla-borsta-w-zgierzu/
+381;Dom tkacza przy ulicy Św. Jana w Pabianicach;51.66704;19.35486;domy;;https://osadnicy.info/miejsca/domy/dom-tkacza-przy-ulicy-sw-jana-w-pabianicach/
+382;Dom Michała Radzikowskiego w Zgierzu;51.85714;19.41553;domy;;https://osadnicy.info/miejsca/domy/dom-michala-radzikowskiego-w-zgierzu/
+383;Dom Jana Konrada w Zgierzu;51.85397;19.41331;domy;;https://osadnicy.info/miejsca/domy/dom-jana-konrada-w-zgierzu/
+384;Dom Tomasza Tymińskiego w Zgierzu;51.85677;19.4153;domy;;https://osadnicy.info/miejsca/domy/dom-tomasza-tyminskiego-w-zgierzu/
+385;Dom służby rodziny Schlösserów w Ozorkowie;51.96485;19.28875;domy;;https://osadnicy.info/miejsca/domy/dom-sluzby-rodziny-schlosserow-w-ozorkowie/
+386;Dom Karola Teodora Weila w Ozorkowie;51.96267;19.29293;domy;;https://osadnicy.info/miejsca/domy/dom-karola-teodora-weila-w-ozorkowie/
+387;Dom Augusta Schwartzschultza w Zgierzu;51.85623;19.41875;domy;;https://osadnicy.info/miejsca/domy/dom-augusta-schwartzschultza-w-zgierzu/
+388;Huta i szlifiernia szkła Wojciecha Lange w Jasieniu;51.00357;19.57082;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/huta-i-szlifiernia-szkla-wojciecha-lange-w-jasieniu/
+389;Manufaktura sukiennicza rodziny Kaczkowskich w Bełchatowie;51.36399;19.36591;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/manufaktura-sukiennicza-rodziny-kaczkowskich-w-belchatowie/
+390;"Młyn wodny i fabryka włókiennicza Huberta Neuville&#8217;a w Emilianowie";51.52345;18.99952;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/mlyn-wodny-i-fabryka-wlokiennicza-huberta-neuvillea-w-emilianowie/
+391;Dom i manufaktura sukiennicza Jana Fryderyka Zacherta w Zgierzu;51.85439;19.4175;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/dom-i-manufaktura-jana-fryderyka-zacherta-w-zgierzu/
+392;"Fabryka włókiennicza rodziny Krusche&#8217;ów w Pabianicach";51.66376;19.35782;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/fabryka-wlokiennicza-rodziny-kruscheow-w-pabianicach/
+393;Fabryka włókiennicza rodziny Schlösserów w Ozorkowie;51.96395;19.28803;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/fabryka-wlokiennicza-rodziny-schlosserow-w-ozorkowie/
+394;Fabryka włókiennicza Wilhelma Fryderyka Zacherta w Zgierzu;51.85751;19.41786;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/fabryka-wlokiennicza-wilhelma-fryderyka-zacherta-w-zgierzu/
+395;Budynek produkcyjno-handlowy rodziny Schlösserów w Ozorkowie;51.96394;19.28991;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/budynek-produkcyjno-handlowy-rodziny-schlosserow-w-ozorkowie/
+396;Cukrownia rodziny Wernerów w Leśmierzu;52.02361;19.28043;przemysłowe;fabryka;https://osadnicy.info/miejsca/fabryki/cukrownia-rodziny-wernerow-w-lesmierzu/
+397;Jatki rzeźniczo-piekarskie w Aleksandrowie Łódzkim;51.81923;19.30305;przemysłowe;inne;https://osadnicy.info/miejsca/inne/jatki-rzezniczo-piekarskie-w-aleksandrowie-lodzkim/
+398;Dom cechu sukienników w Ozorkowie;51.95929;19.3001;przemysłowe;inne;https://osadnicy.info/miejsca/inne/dom-cechu-sukiennikow-w-ozorkowie/
+399;Kościół ewangelicko-augsburski w Łodzi (św. Trójcy);51.77613;19.4552;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-lodzi-sw-trojcy/
+400;Kościół ewangelicko-augsburski w Łodzi (św. Jana Ewangelisty);51.76108;19.46391;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-lodzi-sw-jana-ewangelisty/
+401;Kościół ewangelicko-augsburski w Łodzi (św. Mateusza);51.74648;19.46045;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-lodzi-sw-mateusza/
+402;Kościół ewangelicko-augsburski w Wieluniu;51.21977;18.56775;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-wieluniu/
+403;Kościół ewangelicko-augsburski w Tomaszowie Mazowieckim (Zbawiciela);51.52743;20.01442;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-tomaszowie-mazowieckim-zbawiciela/
+404;Kościół ewangelicko-augsburski w Jarostach;51.46251;19.68319;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-jarostach/
+405;Kościół ewangelicko-augsburski w Tomaszowie Mazowieckim (Św. Trójcy);51.53158;20.00592;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-tomaszowie-mazowieckim-sw-trojcy/
+406;Kościół ewangelicko-augsburski w Gieskach;51.27719;19.58182;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-gieskach/
+407;Kościół ewangelicko-augsburski w Piotrkowie Trybunalskim;51.40902;19.69556;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-piotrkowie-trybunalskim/
+408;Kościół ewangelicko-augsburski w Radomsku;51.06993;19.4379;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-radomsku/
+409;Kościół ewangelicko-augsburski w Feliksowie;51.07264;19.65131;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-feliksowie/
+410;Kościół ewangelicko-augsburski w Dziepółci;51.05221;19.52946;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-dziepolci/
+411;Kościół ewangelicko-augsburski w Bełchatowie;51.36721;19.37324;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-belchatowie/
+412;Kościół ewangelicko-augsburski w Chorzeszowie;51.68877;19.14172;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-chorzeszowie/
+413;Kościół ewangelicko-augsburski w Rokitnicy;51.56696;19.23159;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-rokitnicy/
+414;Kościół ewangelicko-augsburski w Zgierzu (nowy);51.85558;19.42742;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-zgierzu-nowy/
+415;Kościół ewangelicko-augsburski w Zgierzu;51.85488;19.4139;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-zgierzu/
+416;Kościół ewangelicko-augsburski w Zelowie;51.4685;19.21254;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-zelowie/
+417;Kościół ewangelicko-augsburski w Rudzie Bugaj;51.83698;19.28225;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-rudzie-bugaj/
+418;Kościół ewangelicko-augsburski w Pabianicach;51.66396;19.3554;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-pabianicach/
+419;Kościół ewangelicko-augsburski w Ozorkowie;51.95937;19.30077;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-ozorkowie/
+420;Kościół ewangelicko-augsburski w Radogoszczu;51.80819;19.43486;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-radogoszczu/
+421;Kościół ewangelicko-augsburski w Poddębicach;51.88938;18.95252;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-poddebicach/
+422;Kościół ewangelicko-augsburski w Łęczycy;52.05488;19.20366;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-leczycy/
+423;Kościół ewangelicko-augsburski w Konstantynowie Łódzkim;51.74924;19.31883;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-konstantynowie-lodzkim/
+424;Kościół ewangelicko-augsburski w Łaznowskiej Woli;51.66838;19.74339;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-laznowskiej-woli/
+425;Kościół ewangelicko-augsburski w Łasku;51.59345;19.12921;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-lasku/
+426;Kościół ewangelicko-augsburski w Koluszkach;51.74095;19.8155;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-koluszkach/
+427;Kościół ewangelicko-augsburski w Kleszczowie;51.2239;19.30039;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-kleszczowie/
+428;Kościół ewangelicko-augsburski w Kamocinie;51.46658;19.58739;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-kamocinie/
+429;Kościół ewangelicko-augsburski w Kalinie;51.67463;19.55733;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-kalinie/
+430;Kościół ewangelicko-augsburski w Hucie Bardzyńskiej;51.90462;19.1639;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-hucie-bardzynskiej/
+431;Kościół ewangelicko-augsburski w Grabieńcu;51.79449;19.37115;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-grabiencu/
+432;Kościół ewangelicko-augsburski w Felicjanowie;51.75727;19.83365;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-felicjanowie/
+433;Kościół ewangelicko-augsburski w Dąbiu;52.08779;18.82214;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-dabiu/
+434;Kościół ewangelicko-augsburski w Bukowcu;51.69433;19.67714;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-bukowcu/
+435;Kościół ewangelicko-augsburski w Brzezinach;51.80507;19.75471;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-brzezinach/
+436;Kościół ewangelicko-augsburski w Borowej;51.7093;19.73451;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-borowej/
+437;Kościół ewangelicko-augsburski w Bogusławowie;50.97949;19.71184;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-boguslawowie/
+438;Kościół ewangelicko-augsburski w Andrzejowie;51.73656;19.61874;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-andrzejowie/
+439;Kościół ewangelicko-augsburski w Aleksandrowie Łódzkim;51.82122;19.30172;sakralne;zbór;https://osadnicy.info/miejsca/koscioly/kosciol-ewangelicko-augsburski-w-aleksandrowie-lodzkim/
+440;Osada sukiennicza Łódź Nowe Miasto;51.77671;19.45473;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osada-sukiennicza-lodz-nowe-miasto/
+441;Nieudana próba uprzemysłowienia Grocholic;51.33612;19.37576;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/nieudana-proba-uprzemyslowienia-grocholic/
+442;Ośrodek produkcji sukienniczej Bełchatów;51.36747;19.37658;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osrodek-produkcji-sukienniczej-belchatow/
+443;Osada sukiennicza Poddębice;51.89148;18.9582;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osada-sukiennicza-poddebice/
+444;Osada sukiennicza Łęczyca-Waliszew;52.05009;19.21162;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osada-sukiennicza-leczyca-waliszew/
+445;Osada sukiennicza Zgierz Nowe Miasto;51.85469;19.41649;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osada-sukiennicza-zgierz-nowe-miasto/
+446;Osada sukiennicza Konstantynów;51.74757;19.32549;przemysłowe;miasteczko;https://osadnicy.info/miejsca/osady-fabryczne/osada-sukiennicza-konstantynow/
+447;Dom parafialny w Łęczycy;52.05462;19.20374;sakralne;inne;https://osadnicy.info/miejsca/pastorowki/dom-parafialny-w-leczycy/
+448;Pastorówka w Zgierzu;51.85505;19.41339;sakralne;inne;https://osadnicy.info/miejsca/pastorowki/pastorowka-w-zgierzu/
+449;Pastorówka w Pabianicach;51.66534;19.36027;sakralne;inne;https://osadnicy.info/miejsca/pastorowki/pastorowka-w-pabianicach/
+450;Pastorówka w Aleksandrowie Łódzkim;51.82089;19.30166;sakralne;inne;https://osadnicy.info/miejsca/pastorowki/pastorowka-w-aleksandrowie-lodzkim/
+451;Pastorówka w Ozorkowie;51.95893;19.30073;sakralne;inne;https://osadnicy.info/miejsca/pastorowki/pastorowka-w-ozorkowie/
+452;Cmentarz ewangelicko-augsburski w Górkach;52.2221419;18.8671839;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#gorki
+453;Cmentarz ewangelicko-augsburski w Zawadce Nowej;52.217795;18.8494728;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#zawadka-nowa
+454;Cmentarz ewangelicko-augsburski w Zawadce Starej;52.2068956;18.865845;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#zawadka-stara
+455;Cmentarz ewangelicko-augsburski w Szczepanowie;52.16789;18.7911939;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#szczepanow
+456;Cmentarz ewangelicko-augsburski w Grabinie Wielkiej;52.1261631;18.7882325;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#grabina-wielka
+457;Cmentarz ewangelicko-augsburski w Sobótce;52.0968689;18.7875675;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#sobotka
+458;Cmentarz ewangelicko-augsburski w Holendrach Chwalborskich;52.0760956;18.8148633;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#holendry-chwalborskie
+459;Cmentarz ewangelicko-augsburski w Brzezinach;51.9892725;18.8010444;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#brzeziny
+460;Cmentarz ewangelicko-augsburski w Dąbrowie;52.0325075;18.8276075;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#dabrowa
+461;Cmentarz ewangelicko-augsburski w Chorzepinie;52.065445;18.8767883;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#chorzepin
+462;Cmentarz ewangelicko-augsburski w Piaskach;52.0409322;18.9841842;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#piaski
+463;Cmentarz ewangelicko-augsburski w Lesznie;52.0935569;18.9351533;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#leszno
+464;Cmentarz ewangelicko-augsburski w Dąbiu;52.0960353;18.8241742;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#dabie
+465;Cmentarz ewangelicko-augsburski w Łusiach;52.1301381;18.8166211;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#lusie
+466;Cmentarz ewangelicko-augsburski w Zalesiu;52.1337867;18.84958;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#zalesie
+467;Cmentarz ewangelicko-augsburski w Baranowcu;52.1143153;18.8730978;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#baranowiec
+468;Cmentarz ewangelicko-augsburski w Kobylach;52.1377244;18.9481567;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#kobyle
+469;Cmentarz ewangelicko-augsburski w Bugaju;52.1349325;18.9834975;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#bugaj
+470;Cmentarz ewangelicko-augsburski w Grabowie;52.1320019;19.0168319;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#grabow
+471;Cmentarz ewangelicko-augsburski w Ksawerowie;52.1643858;19.0222822;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#ksawerow
+472;Cmentarz ewangelicko-augsburski w Janowie;52.1654386;18.9589819;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#janow
+473;Cmentarz ewangelicko-augsburski w Polamach;52.1556583;18.9337908;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#polamy
+474;Cmentarz ewangelicko-augsburski w Osinach;52.1727692;18.9487681;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#osiny
+475;Cmentarz ewangelicko-augsburski w Kępinie;52.1833219;18.98177;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#kepina
+476;Cmentarz ewangelicko-augsburski w Rochowie;52.1989228;19.0147292;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#rochow
+477;Cmentarz ewangelicko-augsburski w Wygorzelach;52.196345;19.0575156;cmentarz;protestancki;https://osadnicy.info/wycieczki/cmentarze-dawnej-parafii-dabie/#wygorzele
+478;Młyn wodny w Zielęcicach;51.5785897;19.0731756;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#zielecice
+479;Młyn wodny w Woli Marzeńskiej;51.5540336;19.0458961;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#wola-marzenska
+480;Miejsce po młynie wodnym w Emilianowie;51.5228561;19.0021064;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#emilianow
+481;Młyn wodny w Brzeskach;51.5159572;18.9789564;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#brzeski
+482;Młyn wodny w Kozubach;51.4948867;18.9845369;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#kozuby
+483;Młyn wodny w Jamborku;51.5455344;19.2810628;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#jamborek
+484;Młyn wodny w Ldzaniu-Talarze;51.5768897;19.2485331;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#ldzan-talar
+485;Miejsce po młynie wodnym w Baryczy;51.5946242;19.2207578;przemysłowe;młyn wodny;https://osadnicy.info/wycieczki/szlakiem-mlynow-nad-grabia/#barycz
+486;Piaseczno Miasto Wąskotorowe;52.07041910793812;21.02409839630127;kolejowe;skansen;
+488;Piaseczno Gołków;52.050649712457904;20.986665487289432;kolejowe;stacja;
+489;Tarczyn Ruda;51.98104924210711;20.873444080352787;kolejowe;stacja;
+490;Tarczyn Ruda;51.98161588541403;20.874533057212837;kolejowe;wieża wodna;
+491;Zalesie Dolne;52.05944708551483;21.00928723812104;kolejowe;stacja;
+492;Stara Gorzelnia w Chruściechowie;51.580149844262976;20.964446067810066;przemysłowe;browar;
+493;Stary cmentarz w Radzanowie;51.55658218576253;20.86347699165345;cmentarz;katolicki;
+494;Kaplica Młockich;51.57163515324712;20.89220881462097;sakralne;kaplica;
+495;Młyn w Gulinie;51.48712869754462;21.00010871887207;przemysłowe;młyn wodny;
