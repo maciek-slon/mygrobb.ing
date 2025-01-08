@@ -19,6 +19,11 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
 	<!-- <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css"> -->
+
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	
+
+
 	<link rel="stylesheet" href="assets/lib/leaflet-panel-layers.min.css" />
 	<link rel="stylesheet" href="assets/css/app.css">
 
@@ -50,17 +55,13 @@
 							<i class="fa-solid fa-earth-asia white"></i> Tools
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#" id="full-extent-btn"><i class="fa-solid fa-maximize text-dark"></i> Zoom To
-									Full Extent</a></li>
-							<li><a class="dropdown-item" href="#" id="legend-btn"><i class="fa-regular fa-image text-dark"></i> Show Legend</a>
-							</li>
 							<li>
 								<hr class="dropdown-divider">
 							</li>
 							<li><a class="dropdown-item" href="#" id="login-btn"><i class="fa-solid fa-user text-dark"></i> Login</a></li>
 						</ul>
-					</li>
-					<li class="nav-item dropdown">
+					</li> -->
+					<!--<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<i class="fa-solid fa-cloud-arrow-down white"></i> Download
 						</a>
@@ -81,7 +82,14 @@
 					<li class="nav-item d-none d-sm-block">
 						<a class="nav-link" href="#" id="list-btn"><i class="fa-solid fa-location-dot white"></i> Lista obiektów</a>
 					</li>
+					<li class="nav-item d-none d-sm-block">
+						<a class="nav-link" href="#" id="tracks-btn"><i class="fa-solid fa-route white"></i> Ślady</a>
+					</li>
 				</ul>
+				<span class="navbar-text" style="font-size: 80%">
+					Wprowadzone zmiany: <span id="change_count">0</span>
+					<a href="#" class="disabled" id="download-changes">[ pobierz ]</a>
+				</span>
 				<!-- <form class="d-block has-feedback" role="search">
 					<div class="form-floating">
 						<input id="searchbox" class="form-control bg-light text-dark" type="text" placeholder="Search"
@@ -131,10 +139,43 @@
 						</table>
 					</div>
 				</div>
+
+				<div class="panel panel-default" id="tracks">
+					<div class="panel-heading">
+						<h3 class="panel-title align-items-center">Ślady
+							<button type="button" class="btn btn-light btn-sm me-2 py-0 float-end" id="sidebar-hide-btn"><i
+									class="fa-solid fa-chevron-left"></i></button>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="mb-3">
+									<input type="file" class="form-control" name="files" id="input_files">
+							</div>
+						</div>
+					</div>
+					<div class="sidebar-table border">
+						<table class="table" id="tracks-list">
+							<thead class="d-none">
+								<tr>
+									<th>Icon</th>
+								<tr>
+								<tr>
+									<th>Name</th>
+								<tr>
+								<tr>
+									<th>Chevron</th>
+								<tr>
+							</thead>
+							<tbody class="list"></tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="map"></div>
 	</div>
+
 	<div id="loading">
 		<div class="loading-indicator">
 			<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="100"
@@ -408,6 +449,50 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
+	<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="editModalLabel">Właściwości obiektu</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="edit-form">
+						<input type="hidden" id="poi_id" value=""></input>
+						<div class="mb-3">
+							<label class="form-label" for="poi_name">Nazwa</label>
+							<input class="form-control form-control-sm" type="text" id="poi_name" placeholder="Nazwa" />
+						</div>
+						<!-- <div class="mb-3"><label class="form-label" for="poi_lat">Szerokość geograficzna</label><input class="form-control" type="text" id="poi_lat" /></div>
+						<div class="mb-3"><label class="form-label" for="poi_lon">Długość geograficzna</label><input class="form-control" type="text" id="poi_lon" /></div> -->
+						<div class="mb-3">
+							<label class="form-label" for="poi_lat">Położenie</label>
+							<div class="input-group input-group-sm">
+								<input class="form-control" type="text" id="poi_lat" placeholder=""/>
+								<span class="input-group-text"> °N </span>
+								<input class="form-control" type="text" id="poi_lon" placeholder=""/>
+								<span class="input-group-text"> °E </span>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="poi_cat">Kategoria</label>
+							<select name="poi_cat" class="js-example-basic-single form-control" id="poi_cat"></select>
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="poi_name">Odnośnik</label>
+							<input class="form-control form-control-sm" type="text" id="poi_url" placeholder="http://" />
+						</div>
+						<!-- <input id="poi_add" type="button" value="Dodaj" style="margin-top: 10px" /> -->
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+					<button id="poi_add" type="submit" class="btn btn-primary">Zapisz</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -475,11 +560,13 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 	<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-	<script
-		src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+	<script	src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
 	<!-- <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script> -->
 	<script src="assets/lib/leaflet-panel-layers.min.js"></script>
+	<script src="assets/lib/togeojson.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 	<script src="assets/js/app.js"></script>
 </body>
 

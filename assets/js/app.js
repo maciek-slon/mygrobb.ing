@@ -1,5 +1,21 @@
 var map, allMarkersList = [], allMarkersGroup, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
+var new_visited = [], last_id = -1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(window).resize(function() {
   sizeLayerControl();
 });
@@ -36,12 +52,21 @@ $("#legend-btn").click(function() {
 });
 
 $("#login-btn").click(function() {
-  $("#loginModal").modal("show");
+  $("#editModal").modal("show");
   $(".navbar-collapse.in").collapse("hide");
   return false;
 });
 
 $("#list-btn").click(function() {
+  $("#tracks").hide()
+  $("#features").show()
+  animateSidebar();
+  return false;
+});
+
+$("#tracks-btn").click(function() {
+  $("#tracks").show()
+  $("#features").hide()
   animateSidebar();
   return false;
 });
@@ -79,7 +104,8 @@ function clearHighlight() {
 
 function sidebarClick(id) {
   var layer = allMarkersList.find( (elem) => elem.id == id);
-  layer.fire("click");
+  // layer.fire("click");
+  layer.openPopup();
   map.setView([layer.getLatLng().lat, layer.getLatLng().lng], map.zoom);
   /* Hide sidebar and go to the map on small screens */
   if (document.body.clientWidth <= 767) {
@@ -94,7 +120,7 @@ function syncSidebar() {
   allMarkersList.forEach(function (elem) {
     if (map.hasLayer(elem) && map.getBounds().contains(elem.getLatLng())) {
       icon_name = icons[elem.cat][elem.subcat].name;
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + /*L.stamp(elem)*/ elem.id + '" lat="' + elem.getLatLng().lat + '" lng="' + elem.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="24" height="24" src="assets/icons/symbol/'+ icon_name +'.png"></td><td class="feature-name">' + data[elem.ref].name + '</td><td style="vertical-align: middle;"><i class="fa-solid fa-chevron-right flex-end"></i></td></tr>');
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + /*L.stamp(elem)*/ elem.id + '" lat="' + elem.getLatLng().lat + '" lng="' + elem.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="16" src="assets/icons/symbol/'+ icon_name +'.png"></td><td class="feature-name">' + data[elem.ref].name + '</td><td style="vertical-align: middle;"><i class="fa-solid fa-chevron-right flex-end"></i></td></tr>');
     }
   });
 
@@ -108,8 +134,23 @@ function syncSidebar() {
 }
 
 
+$("#tracks").hide()
 
+// -------------------------------------------------------
+// Helpers
+// -------------------------------------------------------
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
 
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
 
 
 
@@ -135,6 +176,10 @@ const CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{
   maxZoom: 20,
   attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
+
+// https://atlasfontium.pl/mapy-historyczne/
+const wig_25 = L.tileLayer.wms('https://pastmaps.cenagis.edu.pl/geoserver/ihpan/wms/?', {layers: 'wig25k_3857'});
+const wig_100 = L.tileLayer.wms('https://pastmaps.cenagis.edu.pl/geoserver/ihpan/wms/?', {layers: 'wig100k_3857'});
 
 // -------------------------------------------------------
 // Overlay layers
@@ -220,8 +265,8 @@ category_meta = [
       ["kościół", "tourism/cult-religion/church", "church-2"],
       ["cerkiew", "tourism/cult-religion/convent", "convent-2"],
       ["synagoga", "tourism/place-to-see/jewish-quarter", "jewishquarter"],
-      ["meczet", "tourism/cult-religion/mosque", "mosquee"],
       ["zbór", "tourism/cult-religion/cathedral", "cathedral"],
+      ["meczet", "tourism/cult-religion/mosque", "mosquee"],
       ["kaplica", "tourism/cult-religion/chapel", "chapel-2"],
       ["inne", "tourism/place-to-see/city-square", "citysquare"]
     ]
@@ -264,6 +309,11 @@ for (i in category_meta) {
   cat = elem["category"];
   layer_groups[cat] = {};
   icons[cat] = {};
+
+  select = document.getElementById('poi_cat');
+  var optgr = document.createElement('optgroup');
+  optgr.setAttribute("label", cat);
+
   for (j in elem["subcategories"]) {
     subelem = elem["subcategories"][j]
     subcat = subelem[0];
@@ -286,14 +336,57 @@ for (i in category_meta) {
     };
     icons[cat][subcat] = icon;
 
-    // select = document.getElementById('poi_cat');
 
-    // var opt = document.createElement('option');
-    // opt.value = cat + "|" + subcat;
-    // opt.innerHTML = cat + " / " + subcat;
-    // select.appendChild(opt);
+    var opt = document.createElement('option');
+    opt.value = cat + "|" + subcat;
+    opt.innerHTML = subcat;
+    opt.setAttribute("title", cat + " / " + subcat)
+    opt.setAttribute("data-tokens", cat + " " + subcat)
+    optgr.appendChild(opt);
   }
+  select.appendChild(optgr);
 }
+
+function formatCat(elem) {
+  label = elem.text;
+  
+  if (elem.id) { 
+    cats = elem.id.split("|")
+    cat = cats[0];
+    subcat = cats[1];
+    label = $('\
+      <span> \
+        <img src="assets/icons/symbol/' + icons[cat][subcat]["name"] + '.png" class="panel_icon" /> ' + 
+        elem.text + '</span>'
+    );
+  }
+
+  return label;
+};
+
+function formatCatSubcat(elem) {
+  label = elem.text;
+  
+  if (elem.id) { 
+    cats = elem.id.split("|")
+    cat = cats[0];
+    subcat = cats[1];
+    label = $('\
+      <span> \
+        <img src="assets/icons/symbol/' + icons[cat][subcat]["name"] + '.png" class="panel_icon" /> ' + 
+        cat + " / " + subcat + '</span>'
+    );
+  }
+
+  return label;
+};
+
+$('#poi_cat').select2({
+  dropdownParent: $('#editModal'),
+  width: '100%',
+  templateResult: formatCat,
+  templateSelection: formatCatSubcat
+});
 
 // =======================================================
 //
@@ -301,13 +394,52 @@ for (i in category_meta) {
 //
 // =======================================================
 
+function clickFeature(e) {
+  isCtrlKey = e.originalEvent.ctrlKey;
+  ismetaKey = e.originalEvent.metaKey;
+
+  // CTRL+click: oznacz obiekt jako odwiedzony
+  if (isCtrlKey || ismetaKey) {
+    
+    map.closePopup();
+    var layer = e.target;
+    console.log(e.target.cat, e.target.subcat)
+    e.target.variant = "visited";
+    e.target.setIcon(icons[e.target.cat][e.target.subcat]["visited"]);
+
+
+    visited.push(e.target.id);
+    new_visited.push(e.target.id);
+    // fetch("/api/visit/" + e.target.id, {
+    //   credentials: "same-origin",
+    //   mode: "same-origin",
+    //   method: "get"
+    // })
+
+    let transaction = db.transaction("visited", "readwrite");
+    db_visited = transaction.objectStore("visited");
+    let addRequest = db_visited.put(e.target.id);
+
+    addRequest.onsuccess = function(event) {
+      console.log(event);
+    };
+
+  }
+
+  $("#poi_id").val(e.target.id);
+  $("#poi_name").val(data[e.target.ref].name);
+  $("#poi_lat").val(e.target.getLatLng().lat);
+  $("#poi_lon").val(e.target.getLatLng().lng);
+  $("#poi_cat").val(e.target.cat + "|" + e.target.subcat);
+  $("#poi_url").val(data[e.target.ref].url);
+}
+
 // -------------------------------------------------------
 // Add new marker to the appropriate layer
 // TODO: add layer list as parameter
 // TODO: pass an actual object instead of the index
 // -------------------------------------------------------
-function addMarker(d) {
-  // console.log(data[d]);
+function addMarker(d, update = false) {
   cat = data[d]["cat"]
   subcat = data[d]["subcat"]
 
@@ -325,7 +457,8 @@ function addMarker(d) {
 
   lat = data[d]["lat"];
   lon = data[d]["lon"];
-  desc = data[d]["id"] + " | " + data[d]["name"];
+  //desc = data[d]["id"] + " | " + data[d]["name"];
+  desc = data[d]["name"] + " <a href='#' onclick='map.closePopup(); $(\"#editModal\").modal(\"show\")'>edit</a>"
   icon_variant = visited.includes(data[d]["id"])?"visited":"white";
   icon = icons[cat][subcat]["m_"+icon_variant];
   
@@ -335,36 +468,259 @@ function addMarker(d) {
   marker.cat = cat;
   marker.subcat = subcat;
   marker.variant = icon_variant;
-  // marker.on({"click": clickFeature});
+  marker.on({"click": clickFeature});
   // marker.setOpacity(0.5);
+  
+  if (update) {
+    old_marker = allMarkersList.find(elem => elem.id == data[d]["id"]);
+    // console.log(old_marker);
+    old_layer = layer_groups[old_marker["cat"]][old_marker["subcat"]];
+    old_layer.removeLayer(old_marker);
+    allMarkersList[d] = marker;
+  } else {
+    allMarkersList.push(marker);
+  }
+  
   marker.addTo(layer);
-  allMarkersList.push(marker);
 }
 
+function updateData(old_data, new_data) {
+  ret_new = 0;
+  ret_upd = 0;
+  for(i in new_data) {
+    elem = new_data[i];
+    data_index = old_data.findIndex(x => x.id == elem.id);
 
+    console.log("Index: ", data_index);
+
+    if (data_index < 0) {
+      data.push(elem);
+      data_index = data.length - 1;
+      ret_new = ret_new + 1;
+    } else {
+      data[data_index] = elem;
+      ret_upd = ret_upd + 1;
+    }
+  }
+  return [ret_new, ret_upd];
+}
 
 function loadMarkers(data) {
   // console.log(visited);
   for (d in data) {
     addMarker(d);
+    if (data[d]["id"] > last_id) last_id = data[d]["id"];
   }
   allMarkersGroup = new L.featureGroup(allMarkersList);
   $("#loading").hide();
 }
 
-$.getJSON( "./data/visited.json", function( jsondata ) {
-  visited = jsondata.visited;
-  console.log(visited)
+// $.getJSON( "./data/visited.json", function( jsondata ) {
+//   visited = jsondata.visited;
+//   console.log(visited)
 
+// -------------------------------------------
+// IndexedDB
+// -------------------------------------------
+
+var db;
+let request = indexedDB.open("local_changes", 1);
+
+request.onupgradeneeded = function(event) {
+  db = event.target.result;
+  db_points = db.createObjectStore("points", { keyPath: "id" });
+  db_visited = db.createObjectStore("visited", { autoIncrement: true });
+  // objectStore.createIndex("nameIndex", "name", { unique: false });
+};
+
+request.onsuccess = function(event) {
+  db = event.target.result;
+  loadData();
+};
+
+request.onerror = function(event) {
+  // Error occurred while opening the database
+  console.log("Cant't open DB", event)
+};
+
+// function odmiana(liczba, pojedyncza, mnoga, mnoga_dopelniacz) {
+// 	liczba = Math.abs(liczba); // tylko jeśli mogą zdarzyć się liczby ujemne
+// 	if (liczba === 1) return pojedyncza;
+// 	var reszta10 = liczba % 10;
+// 	var reszta100 = liczba % 100;
+// 	if (reszta10 > 4 || reszta10 < 2 || (reszta100 < 15 && reszta100 > 11))
+// 		return mnoga_dopelniacz;
+// 	return mnoga;
+// }
+
+$("#download-changes").click(function() {
+  if ($("#download-changes").hasClass("disabled")) {
+
+  } else {
+    let transaction = db.transaction("points", "readonly");
+    db_points = transaction.objectStore("points");
+    let request = db_points.getAll();
+    request.onerror = (event) => {
+      console.err("error fetching data");
+    };
+    request.onsuccess = (event) => {
+      csvString = Papa.unparse(request.result, {delimiter: ";"});
+      download("changes.csv", csvString);
+    }
+  }
+});
+
+function updateChangeInfo() {
+  let transaction = db.transaction("points", "readonly");
+  db_points = transaction.objectStore("points");
+  let request = db_points.count();
+  request.onerror = (event) => {
+      console.err("error fetching data");
+  };
+  request.onsuccess = (event) => {
+    count = request.result;
+    $("#change_count").text(count);
+    if (count > 0) {
+      $("#download-changes").removeClass("disabled");
+    } else {
+      $("#download-changes").addClass("disabled");
+    }
+  }
+}
+
+function loadData() {
   // Read markers data from data.csv
   $.get('./data/pois.csv', function(csvString) {
     // Use PapaParse to convert string to array of objects
     data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
-    loadMarkers(data);
+
+    let transaction = db.transaction("points", "readonly");
+    db_points = transaction.objectStore("points");
+    let request = db_points.getAll();
+    request.onerror = (event) => {
+        console.err("error fetching data");
+    };
+    request.onsuccess = (event) => {
+      res = updateData(data, request.result);
+      
+      updateChangeInfo();
+
+      let transaction = db.transaction("visited", "readonly");
+      db_visited = transaction.objectStore("visited");
+      let request2 = db_visited.getAll();
+      request2.onerror = (event) => {
+          console.err("error fetching data");
+      };
+      request2.onsuccess = (event) => {
+        visited = request2.result;
+        
+        loadMarkers(data);
+        syncSidebar();
+      }
+    };
+
   });
-});
+}
+
+// --------------------------------------------------
+// Dodawanie i edycja właściwości obiektów
+// --------------------------------------------------
+
+function poi_add() {
+  
+  map.closePopup();
+
+  poi_id = parseInt($("#poi_id").val());
+  poi_name = $("#poi_name").val();
+  lat = parseFloat($("#poi_lat").val());
+  lon = parseFloat($("#poi_lon").val());
+  cats = $("#poi_cat").val().split("|");
+  cat = cats[0];
+  subcat = cats[1];
+  poi_url = $("#poi_url").val();
+
+  elem = {
+    "id": poi_id,
+    "name": poi_name,
+    "lat": lat,
+    "lon": lon,
+    "cat": cat,
+    "subcat": subcat,
+    "url": poi_url
+  };
+  
+  console.log("After edit: ", elem)
+
+  data_index = data.findIndex(x => x.id == poi_id);
+
+  console.log("Index: ", data_index);
+
+  if (data_index < 0) {
+    data.push(elem);
+    data_index = data.length - 1;
+    addMarker(data_index);
+  } else {
+    data[data_index] = elem;
+    addMarker(data_index, true);
+  }
 
 
+  let transaction = db.transaction("points", "readwrite");
+  db_points = transaction.objectStore("points");
+  let addRequest = db_points.put(elem);
+
+  addRequest.onsuccess = function(event) {
+    console.log(event);
+    updateChangeInfo();
+  };
+
+  // const dataToSend = JSON.stringify(elem);
+  // let dataReceived = ""; 
+  // fetch("/api/add_poi/", {
+  //   credentials: "same-origin",
+  //   mode: "same-origin",
+  //   method: "post",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: dataToSend
+  // })
+  //   .then(resp => {
+  //     if (resp.status === 200) {
+  //       return resp.json()
+  //     } else {
+  //       console.log("Status: " + resp.status)
+  //       return Promise.reject("server")
+  //     }
+  //   })
+  //   .then(dataJson => {
+  //     dataReceived = dataJson
+  //     console.log('Received: ', dataReceived)   
+  //   })
+  //   .catch(err => {
+  //     if (err === "server") return
+  //     console.log(err)
+  //   })
+
+  $('#editModal').modal("hide");
+
+}
+
+$("#poi_add").on("click", poi_add);
+
+function addPoint(latlng) {
+  highlight.clearLayers();
+
+  console.log(latlng);
+
+  $("#poi_id").val(last_id + 1);
+  $("#poi_name").val("");
+  $("#poi_lat").val(latlng.lat);
+  $("#poi_lon").val(latlng.lng);
+  $("#poi_cat").val("cmentarz|katolicki");
+  $("#poi_url").val("");
+
+  $("#editModal").modal("show");
+  
+}
 
 
 
@@ -572,6 +928,7 @@ map.on("overlayadd", function(e) {
 });
 
 map.on("overlayremove", function(e) {
+  console.log(e);
     syncSidebar();
 });
 
@@ -583,6 +940,9 @@ map.on("moveend", function (e) {
 /* Clear feature highlight when map is clicked */
 map.on("click", function(e) {
   highlight.clearLayers();
+  if (e.originalEvent.shiftKey) {
+    addPoint(e.latlng);
+  }
 });
 
 /* Attribution control */
@@ -621,10 +981,69 @@ map.on('zoomend', function() {
 
 
 
+// -----------------------------------------------------
+// Wyświetlanie pliku lokalnego
+// -----------------------------------------------------
 
 
+var fileInput = document.getElementById('input_files');
 
+//this function convert the string representation of some XML
+//into a DOM object.
+function StringToXMLDom(string){
+	var xmlDoc=null;
+	if (window.DOMParser)
+	{
+		parser=new DOMParser();
+		xmlDoc=parser.parseFromString(string,"text/xml");
+	}
+	else // Internet Explorer
+	{
+		xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.async="false";
+		xmlDoc.loadXML(string);
+	}
+	return xmlDoc;
+}
 
+fileInput.addEventListener('change', function (event) {
+  var file = fileInput.files[0],
+      fr = new FileReader();
+  fileInput.value = ''; // Clear the input.
+  extension = file.name.split('.')[1]
+  if (extension === 'geojson') {
+      fr.onload = function () {
+        geojson = JSON.parse(fr.result);
+        var layer = L.geoJson(geojson).addTo(map);
+        var coords = geojson.features[0].geometry.coordinates[0][0];
+        console.log(coords)
+        var marker = L.marker(new L.LatLng(coords[1], coords[0]), {
+            title: 'My Bike Route'
+        }).addTo(map);
+
+        $("#tracks-list tbody").append('<tr class="track-row" id="' + /*L.stamp(elem)*/ 1 + '" lat="' + coords[1] + '" lng="' + coords[0] + '"><td style="vertical-align: middle;"><img width="24" height="24" src="assets/icons/symbol/'+ 'track' +'.png"></td><td class="feature-name">' + file.name + '</td><td style="vertical-align: middle;"><i class="fa-solid fa-chevron-right flex-end"></i></td></tr>');
+        map.fitBounds(layer.getBounds());
+      };
+      fr.readAsText(file);
+  }
+  if (extension === 'gpx') {
+    fr.onload = function () {
+      // var xmlData = $(fr.result);
+      xmlData = StringToXMLDom(fr.result);
+      geojson = toGeoJSON.gpx(xmlData);
+      var layer = L.geoJson(geojson).addTo(map);
+      var coords = geojson.features[0].geometry.coordinates[0];
+      console.log(coords)
+      var marker = L.marker(new L.LatLng(coords[1], coords[0]), {
+          title: 'My Bike Route'
+      }).addTo(map);
+
+      $("#tracks-list tbody").append('<tr class="track-row" id="' + /*L.stamp(elem)*/ 1 + '" lat="' + coords[1] + '" lng="' + coords[0] + '"><td style="vertical-align: middle;"><img width="24" height="24" src="assets/icons/symbol/'+ 'track' +'.png"></td><td class="feature-name">' + file.name + '</td><td style="vertical-align: middle;"><i class="fa-solid fa-chevron-right flex-end"></i></td></tr>');
+      map.fitBounds(layer.getBounds());
+    };
+    fr.readAsText(file);
+}
+});
 
 
 
@@ -700,6 +1119,14 @@ var baseLayers = [
       {
         name: "CyclOSM",
         layer: CyclOSM
+      },
+      {
+        name: "WIG 1:25k",
+        layer: wig_25
+      },
+      {
+        name: "WIG 1:100k",
+        layer: wig_100
       }
     ]
   }
