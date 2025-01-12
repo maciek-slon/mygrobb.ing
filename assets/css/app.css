@@ -30,7 +30,7 @@ input[type="radio"], input[type="checkbox"] {
   margin: -10px 0 0 -110px;
   z-index: 20001;
 }
-#features {
+#features, #tracks {
   margin: 0px;
   border: none;
   border-radius: 0px;
@@ -81,7 +81,7 @@ input[type="radio"], input[type="checkbox"] {
   color: inherit;
 }
 .panel-title {
-  margin-top: 5px;
+  padding-top: 8px;
   margin-bottom: 5px;
 	margin-left: 5px;
   font-size: 18px;
@@ -132,7 +132,7 @@ input[type="radio"], input[type="checkbox"] {
 .sidebar-table {
   position: absolute;
   width: 100%;
-  top: 80px;
+  top: 90px;
   bottom: 0px;
   overflow: auto;
 }
@@ -263,4 +263,37 @@ a.disabled{
   .leaflet-control-container {
     display: none !important;
   }
+}
+
+i {
+  vertical-align: baseline;
+}
+
+/* dark mode for any map
+https://dev.to/deepakdevanand/leaflet-map-dark-theme-5ej0
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+} 
+  
+.leaflet-container {
+    background: #000
+}
+
+*/
+
+.track-title {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.change-new {
+  background: green !important;
+}
+
+.change-alter {
+  background: orange !important;
 }

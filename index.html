@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css">
 	<!-- <link rel="stylesheet" href="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css"> -->
 
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	
 
@@ -39,7 +40,7 @@
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">myGrobbing</a>
 			<div class="d-inline-flex align-items-center">
-				<a class="d-block d-sm-none me-3" href="#" id="sidebar-toggle-btn"><i class="fa-solid fa-magnifying-glass fa-xl white"></i></a>
+				<!-- <a class="d-block d-sm-none me-3" href="#" id="sidebar-toggle-btn"><i class="fa-solid fa-magnifying-glass fa-xl white"></i></a> -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -76,19 +77,30 @@
 									target="_blank"><i class="fa-solid fa-download text-dark"></i> Museums</a></li>
 						</ul>
 					</li> -->
-					<li class="nav-item d-none d-sm-block">
-						<a class="nav-link" href="#" id="full-extent-btn"><i class="fa-solid fa-expand white"></i> Pokaż wszystko</a>
+					<li class="nav-item d-sm-block">
+						<a class="nav-link" href="#" id="full-extent-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-expand white  mx-1"></i> Pokaż wszystko</a>
 					</li>
-					<li class="nav-item d-none d-sm-block">
-						<a class="nav-link" href="#" id="list-btn"><i class="fa-solid fa-location-dot white"></i> Lista obiektów</a>
+					<li class="nav-item d-sm-block">
+						<a class="nav-link" href="#" id="list-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-location-dot white  mx-1"></i> Obiekty</a>
 					</li>
-					<li class="nav-item d-none d-sm-block">
-						<a class="nav-link" href="#" id="tracks-btn"><i class="fa-solid fa-route white"></i> Ślady</a>
+					<li class="nav-item d-sm-block">
+						<a class="nav-link" href="#" id="tracks-btn" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"><i class="fa-solid fa-route white  mx-1"></i> Trasy</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="fa-solid fa-info white mx-1"></i> Informacje
+						</a>
+						<ul class="dropdown-menu">
+							<!-- <li><hr class="dropdown-divider"></li> -->
+							<li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" id="data-sources-btn"><i class="fa-solid fa-table text-dark mx-1"></i> Źródła danych</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" id="data-maps-btn"><i class="fa-solid fa-map text-dark mx-1"></i> Mapy</a></li>
+							<li><a class="dropdown-item" href="#" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" id="data-libs-btn"><i class="fa-solid fa-code text-dark mx-1"></i> Biblioteki</a></li>
+						</ul>
 					</li>
 				</ul>
 				<span class="navbar-text" style="font-size: 80%">
 					Wprowadzone zmiany: <span id="change_count">0</span>
-					<a href="#" class="disabled" id="download-changes">[ pobierz ]</a>
+					<a href="#" class="disabled" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" id="download-changes">[ pobierz ]</a>
 				</span>
 				<!-- <form class="d-block has-feedback" role="search">
 					<div class="form-floating">
@@ -102,13 +114,16 @@
 	</nav>
 
 	<div id="container">
-		<div id="sidebar">
+
+		<div id="sidebar" style="display: none" >
 			<div class="sidebar-wrapper">
-				<div class="panel panel-default" id="features">
+				<div class="panel panel-default" id="features" >
 					<div class="panel-heading">
-						<h3 class="panel-title align-items-center">Widoczne obiekty
-							<button type="button" class="btn btn-light btn-sm me-2 py-0 float-end" id="sidebar-hide-btn"><i
-									class="fa-solid fa-chevron-left"></i></button>
+						<h3 class="panel-title align-items-center">
+							<button type="button" class="btn btn-light me-2 py-0 sidebar-hide-btn"><i
+								class="fa-solid fa-chevron-left"></i></button>
+								Obiekty
+							
 						</h3>
 					</div>
 					<div class="panel-body">
@@ -139,21 +154,38 @@
 						</table>
 					</div>
 				</div>
-
+				
 				<div class="panel panel-default" id="tracks">
 					<div class="panel-heading">
-						<h3 class="panel-title align-items-center">Ślady
-							<button type="button" class="btn btn-light btn-sm me-2 py-0 float-end" id="sidebar-hide-btn"><i
-									class="fa-solid fa-chevron-left"></i></button>
+						<h3 class="panel-title align-items-center">
+							<button type="button" class="btn btn-light me-2 py-0 sidebar-hide-btn"><i class="fa-solid fa-chevron-left"></i></button>
+								Trasy
+							<div class="btn-group float-end" role="group" aria-label="Opcje tworzenia ścieżek">
+								<button type="button" id="btn-new-track" class="btn btn-light py-0 float-end"><i class="fa fa-plus"></i></button>
+												
+								<button type="button" class="btn btn-light py-0 float-end me-3" onclick="document.getElementById('input_files').click();"><i class="fa fa-regular fa-folder-open"></i></button>
+								
+
+							</div>
+							<input type="file" class="form-control" name="files" id="input_files" style="display: none">
+							
 						</h3>
 					</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="mb-3">
-									<input type="file" class="form-control" name="files" id="input_files">
-							</div>
+								<div class="col-xs-8 col-md-8 pe-md-1 pe-sm-0">
+									<input type="text" class="form-control search" placeholder="Filtruj" />
+								</div>
+								<div class="col-xs-4 col-md-4 ps-md-1 ps-sm-0">
+									<button type="button" class="btn btn-primary sort d-none d-sm-block d-inline-flex align-items-center"
+										data-sort="feature-name" id="sort-btn"><i class="fa-solid fa-sort"></i>&nbsp;Sortuj</button>
+								</div>
 						</div>
 					</div>
+
+
+
+					
 					<div class="sidebar-table border">
 						<table class="table" id="tracks-list">
 							<thead class="d-none">
@@ -173,6 +205,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div id="map"></div>
 	</div>
 
@@ -493,6 +526,39 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
+	
+	<div class="modal fade" id="changesModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="editModalLabel">Wprowadzone zmiany</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Nazwa</th>
+								<th scope="col">Lat</th>
+								<th scope="col">Lon</th>
+								<th scope="col">Cat</th>
+								<th scope="col">Subcat</th>
+							</tr>
+						</thead>
+						<tbody id="changes-table-body">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+					<!-- <button id="poi_add" type="submit" class="btn btn-primary">Zapisz</button> -->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -537,17 +603,17 @@
 
 	<div class="modal fade" id="attributionModal" tabindex="-1" aria-labelledby="attributionModalLabel"
 		aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="attributionModalLabel">
-						Developed by <a href='http://bryanmcbride.com'>bryanmcbride.com</a>
+						Informacje o wykorzystanych mapach
 					</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<p>Customized by <a href="https://unsorry.net" target="_blank" rel="noopener noreferrer">unsorry.net</a></p>
-					<div id="attribution"></div>
+					<div id="attribution">asd</div>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
@@ -564,7 +630,13 @@
 	<!-- <script src="assets/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js"></script> -->
 	<script src="assets/lib/leaflet-panel-layers.min.js"></script>
 	<script src="assets/lib/togeojson.js"></script>
+	<script src="assets/lib/togpx.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+	<script src="assets/lib/leaflet-routing-machine.js"></script>
+
+	<script src="assets/lib/leaflet.map-hash.js"></script>
+
+
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 	<script src="assets/js/app.js"></script>
