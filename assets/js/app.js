@@ -5,7 +5,16 @@ var new_visited = [], last_id = -1;
 var data = [], source_data = [], changes = {};
 
 
+function genTSID(base_date = new Date(2025, 0, 1)) { 
+  var ts = Date.now() - base_date; 
+  var id = Math.floor(Math.random() * 1024); 
+  return ts * 1024 + id; 
+}
 
+function getTimeFromTSID(tsid, base_date = new Date(2025, 0, 1)) { 
+  var ts = Math.floor(tsid / 1024) + base_date.valueOf(); 
+  return new Date(ts); 
+}
 
 
 
@@ -224,6 +233,11 @@ const strava = L.tileLayer(strava_proxy_url, {
 var OpenRailwayMap = L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://www.OpenRailwayMap.org">OpenRailwayMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+var WaymarkedTrails_hiking = L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
 
@@ -462,12 +476,28 @@ function clickFeature(e) {
 
   } else {
 
+    var lat = e.target.getLatLng().lat.toFixed(5);
+    var lon = e.target.getLatLng().lng.toFixed(5);
     $("#poi_id").val(e.target.id);
     $("#poi_name").val(data[e.target.ref].name);
-    $("#poi_lat").val(e.target.getLatLng().lat.toFixed(5));
-    $("#poi_lon").val(e.target.getLatLng().lng.toFixed(5));
+    $("#poi_lat").val(lat);
+    $("#poi_lon").val(lon);
     $("#poi_cat").val(e.target.cat + "|" + e.target.subcat).trigger('change');
     $("#poi_url").val(data[e.target.ref].url);
+
+    // fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=jsonv2&layer=address&zoom=13`, { 
+    //   method: 'GET'
+    // })
+    // .then(function(response) { 
+    //   if (response.status == 200) {
+    //     console.log("OK");
+    //     return response.json(); 
+    //   } 
+    // })
+    // .then(function(json) {
+    //   console.log(json)
+    // })
+    
 
 
     if (active_track && data_elem) {
@@ -1504,6 +1534,11 @@ var overLayers = [
         active: false,
         name: "OpenRailwayMap",
         layer: OpenRailwayMap
+      },
+      {
+        active: false,
+        name: "Waymarker trails",
+        layer: WaymarkedTrails_hiking
       }
     ]
   },
@@ -1894,35 +1929,105 @@ function showHideTrack(track_id) {
   }
 }
 
+function getTrackRow(track_info) {
+  
+  let tmp = track_info.wpts.length;
+  tmp += " " + odmiana(tmp, "punkt", "punkty", "punktów")
+
+  return  `<div class="track-row px-1 border mx-0" id="track-info-${track_info.id}" lat="0" lng="0">` + 
+          ` <div class="row align-items-center mx-0 px-0">` + 
+          `   <div class="col-2 text-center py-1">` + 
+          `     <button type="button" id="showhide-${track_info.id}" class="btn btn-light py-0" onclick="showHideTrack(${track_info.id})">` + 
+          `       <i id="track-eye-${track_info.id}" class="fa fa-regular fa-eye"></i>`+
+          `     </button>` + 
+          `   </div>` + 
+          `   <div class="col track-name">` + 
+          `     <div class="track-title" id="track-name-${track_info.id}">${track_info.name}</div>` +
+          `     <div class="track-summary" id="track-summary-${track_info.id}">` + 
+          `       <span id="track-length-${track_info.id}">${track_info.length.toFixed(2)}</span> km., ` + 
+          `       <span id="track-points-${track_info.id}">${tmp}</span>` +
+          `     </div>` +
+          `   </div>` + 
+          ` </div>` +           
+          ` <div class="btn-group float-end" role="group" aria-label="Opcje zapisu ścieżki">` + 
+          `   <button type="button" id="btn-trackbook-${track_info.id}" class="btn btn-sm btn-light py-0 float-end">` + 
+          `     <i class="fa fa-table-list"></i>` + 
+          `   </button>` + 
+          `   <button type="button" id="btn-trackgpx-${track_info.id}"	class="btn btn-sm btn-light py-0 float-end" onclick="handleDownloadGpx(${track_info.id})">` + 
+          `     <i class="fa fa-download"></i>` + 
+          `   </button>` + 
+          `   <button type="button" id="btn-trackdel-${track_info.id}" class="btn btn-sm btn-light py-0 float-end me-2" onclick="removeTrack(${track_info.id})">` + 
+          `     <i class="fa-regular fa-trash-can"></i>` + 
+          `   </button>` + 
+          ` </div>` + 
+          `` + 
+          ` <div id="track-pois-${track_info.id}">` + 
+          `` + 
+          ` </div>`
+          // ` <div class="track-overlay">asd</div>`
+}
+
+function getTrackPointRow(point) {
+
+  return  `  <div class="row align-items-center my-1 mx-0" style="font-size: 80%">`+
+          `    <div class="col-2 mb-1 text-end">${point.distance}</div>`+
+          `    <div class="col-1 px-0 py-0 text-center">`+
+          `      <img style="width: 20px; height: 20px;" src="assets/icons/symbol/${point.icon}.png">`+
+          `    </div>`+
+          `    <div class="col pl-2 track-point-name">${point.name}</div>`+
+          `    <div class="col-1 text-end">`+
+          `      X`+
+          `    </div>`+
+          `  </div>`
+}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function addTrackItem(track_info) {
   var track_id = track_info.id;
   var lat = 0;
   var lng = 0;
 
-  let tmp = track_info.wpts.length;
-  tmp + " " + odmiana(tmp, "punkt", "punkty", "punktów")
+  // let tmp = track_info.wpts.length;
+  // tmp + " " + odmiana(tmp, "punkt", "punkty", "punktów")
 
 
-  elem_str  = '<tr class="track-row" id="track-info-' + track_id + '" lat="' + lat + '" lng="' + lng + '"><td style="vertical-align: top;">';
-  elem_str += '<button type="button" id="showhide-' + track_id + '" class="btn btn-light py-0" onclick="showHideTrack(' + track_id + ')"><i id="track-eye-' + track_id + '" class="fa fa-regular ' + (track_info.visible?'fa-eye':'fa-eye-slash') + '"></button></td>'
-  elem_str += '<td class="track-name" style="width: 100%;">';
-  elem_str += '<div class="track-title" id="track-name-' + track_id + '">'  + track_info.name + '</div>';
-  elem_str += '<div id="track-summary-' + track_id + '">';
-  elem_str += '<span id="track-length-' + track_id + '">' + track_info.length.toFixed(2) + '</span> km., ';
-  elem_str += '<span id="track-points-' + track_id + '">' + tmp + " " + odmiana(tmp, "punkt", "punkty", "punktów") + '</span>';
-  elem_str += '</div>';
-  elem_str += '<div id="track-pois-' + track_id + '"></div>';
-  elem_str += '</td><td style="vertical-align: top;">';
-  elem_str += '<div class="btn-group float-end" role="group" aria-label="Opcje zapisu ścieżkik">';
-  elem_str += '<button type="button" id="btn-trackbook-' + track_id + '" class="btn btn-sm btn-light py-0 float-end"><i class="fa fa-table-list"></i></button>';
-  elem_str += '<button type="button" id="btn-trackgpx-' + track_id + '" class="btn btn-sm btn-light py-0 float-end" onclick="handleDownloadGpx(' + track_id + ')"><i class="fa fa-download"></i></button>';
-  elem_str += '<button type="button" id="btn-trackdel-' + track_id + '" class="btn btn-sm btn-light py-0 float-end me-2" onclick="removeTrack(' + track_id + ')"><i class="fa-regular fa-trash-can"></i></button>';
-  elem_str += '</div>';
-  elem_str += '</td></tr>';
-  $("#tracks-list tbody").append(elem_str);
+  // elem_str  = '<tr class="track-row" id="track-info-' + track_id + '" lat="' + lat + '" lng="' + lng + '"><td style="vertical-align: top;">';
+  // elem_str += '<button type="button" id="showhide-' + track_id + '" class="btn btn-light py-0" onclick="showHideTrack(' + track_id + ')"><i id="track-eye-' + track_id + '" class="fa fa-regular ' + (track_info.visible?'fa-eye':'fa-eye-slash') + '"></button></td>'
+  // elem_str += '<td class="track-name" style="width: 100%;">';
+  // elem_str += '<div class="track-title" id="track-name-' + track_id + '">'  + track_info.name + '</div>';
+  // elem_str += '<div id="track-summary-' + track_id + '">';
+  // elem_str += '<span id="track-length-' + track_id + '">' + track_info.length.toFixed(2) + '</span> km., ';
+  // elem_str += '<span id="track-points-' + track_id + '">' + tmp + " " + odmiana(tmp, "punkt", "punkty", "punktów") + '</span>';
+  // elem_str += '</div>';
+  // elem_str += '<div id="track-pois-' + track_id + '"></div>';
+  // elem_str += '</td><td style="vertical-align: top;">';
+  // elem_str += '<div class="btn-group float-end" role="group" aria-label="Opcje zapisu ścieżki">';
+  // elem_str += '<button type="button" id="btn-trackbook-' + track_id + '" class="btn btn-sm btn-light py-0 float-end"><i class="fa fa-table-list"></i></button>';
+  // elem_str += '<button type="button" id="btn-trackgpx-' + track_id + '" class="btn btn-sm btn-light py-0 float-end" onclick="handleDownloadGpx(' + track_id + ')"><i class="fa fa-download"></i></button>';
+  // elem_str += '<button type="button" id="btn-trackdel-' + track_id + '" class="btn btn-sm btn-light py-0 float-end me-2" onclick="removeTrack(' + track_id + ')"><i class="fa-regular fa-trash-can"></i></button>';
+  // elem_str += '</div>';
+  // elem_str += '</td></tr>';
+  // $("#tracks-list tbody").append(elem_str);
 
-  tracksList = new List("tracks", {valueNames: ["track-name"]});
+  // tracksList = new List("tracks", {valueNames: ["track-name"]});
   // tracksList.sort("track-name", {order:"asc"});
+
+  let itemRow = getTrackRow(track_info);
+  $("#tracks-list").append(itemRow);
 }
 
 function addNewTrack() {
@@ -2110,8 +2215,10 @@ function addTrackWaypoint(track, elem, update = true) {
   let subcat = elem.subcat;
   let icon_name = icons[cat][subcat]["name"];
 
-  var html_elem = '<div class="my-1"><div style="float: left; display: inline-block", class="mx-1"><img style="width: 20px; height: 20px;" src="assets/icons/symbol/' + icon_name + '.png"></div>';
-  html_elem += '<span class="ml-2">' + elem.name + '</span></div>';
+  // var html_elem = '<div class="my-1"><div style="float: left; display: inline-block", class="mx-1"><img style="width: 20px; height: 20px;" src="assets/icons/symbol/' + icon_name + '.png"></div>';
+  // html_elem += '<span class="ml-2">' + elem.name + '</span></div>';
+
+  let html_elem = getTrackPointRow({name: elem.name, icon: icon_name, distance: 0});
 
   $("#track-pois-" + track.id).append(html_elem);
 
@@ -2137,8 +2244,9 @@ function updateTrackInfo(track, save_changes = true) {
 }
 
 function getClosestTrackPoint(coords, wpt) {
-  lat = wpt.getLatLng().lat;
-  lon = wpt.getLatLng().lng;
+  console.log(wpt);
+  lat = wpt.lat;
+  lon = wpt.lon;
   min_dist = 10000;
   min_pt = [lat, lon, 0];
   coords.forEach((c) => {
@@ -2199,10 +2307,11 @@ function generateGpx(track) {
 
   track.wpts.forEach((wpt) => {
     pt = getClosestTrackPoint(coords, wpt);
+    console.log(pt);
     feat = {
       "type": "Feature",
       "properties": {
-        "name": data[wpt.ref]["name"]
+        "name": wpt.name
       },
       "geometry": {
         "type": "Point",
