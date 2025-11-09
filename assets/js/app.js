@@ -1,9 +1,12 @@
+// Maps Icons Collection https://mapicons.mapsmarker.com
+
 var map, allMarkersList = [], allMarkersGroup, featureList, tracksList, boroughSearch = [], theaterSearch = [], museumSearch = [];
 
 var new_visited = [], last_id = -1;
 
 var data = [], source_data = [], changes = {};
 
+var drawSquadrats = false;
 
 function genTSID(base_date = new Date(2025, 0, 1)) { 
   var ts = Date.now() - base_date; 
@@ -15,6 +18,80 @@ function getTimeFromTSID(tsid, base_date = new Date(2025, 0, 1)) {
   var ts = Math.floor(tsid / 1024) + base_date.valueOf(); 
   return new Date(ts); 
 }
+
+
+
+
+
+
+
+
+
+
+async function fetchImage(url, callback, headers, abort) {
+  let _headers = {};
+  if (headers) {
+    headers.forEach(h => {
+      _headers[h.header] = h.value;
+    });
+  }
+  const controller = new AbortController();
+  const signal = controller.signal;
+  if (abort) {
+    abort.subscribe(() => {
+      controller.abort();
+    });
+  }
+  console.log(document.cookie)
+  const f = await fetch(url, {
+    method: "GET",
+    headers: _headers,
+    mode: "cors",
+    signal: signal,
+    credentials: 'include'
+    // credentials: 'same-origin',
+  });
+  const blob = await f.blob();
+  callback(blob);
+}
+
+L.TileLayerWithHeaders = L.TileLayer.extend({
+  initialize: function (url, options, headers, abort) {
+    L.TileLayer.prototype.initialize.call(this, url, options);
+    this.headers = headers;
+    this.abort = abort;
+  },
+  createTile(coords, done) {
+    const url = this.getTileUrl(coords);
+    const img = document.createElement("img");
+    img.setAttribute("role", "presentation");
+
+    fetchImage(
+      url,
+      resp => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          img.src = reader.result;
+          // console.log(reader.result);
+        };
+        reader.readAsDataURL(resp);
+        done(null, img);
+      },
+      this.headers,
+      this.abort
+    );
+    return img;
+  }
+});
+
+// L.tileLayer = function (url, options, headers, abort) {
+//   return new L.TileLayerWithHeaders(url, options, headers, abort);
+// };
+
+
+
+
+
 
 
 
@@ -223,12 +300,30 @@ const wig_100 = L.tileLayer.wms('https://pastmaps.cenagis.edu.pl/geoserver/ihpan
 // kolory strava: blue, bluered, red, hot, gray, orange, purple
 strava_proxy_url = 'https://proxy.nakarte.me/https/heatmap-external-b.strava.com/tiles-auth/ride/orange/{z}/{x}/{y}.png?px=256';
 strava_url = "https://heatmap-external-{s}.strava.com/tiles-auth/ride/bluered/{z}/{x}/{y}.png?Key-Pair-Id=APKAIDPUN4QMG7VUQPSA&Policy=eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vaGVhdG1hcC1leHRlcm5hbC0qLnN0cmF2YS5jb20vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczNzQ2MzM3MH0sIkRhdGVHcmVhdGVyVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzM2MjM5MzcwfX19XX0_&Signature=Sn0XwNcgnzq8HS5hqdoj1jtPMbwEHX1W42sYeHryQ-aOtfY5cvgotJ8B7GQJriZy7JjOU57O10H0J81Qka-7ypTY63gOyJQOPvvi0Mc3PvodqhjpT2h8ZOyd8I7wQPd-gWRvJe~2IF6~beczzO3CzcRJyFp2eaew0~ne5c0-sj1yKzdOLzYgceYQqmGxrra9MxqTJMvH2xlGp2Il84hdsKEg2WkTC1A~DHw5NMMXbDM2Ke4LMGU6SuegE45gacQZwPMRMRv8DlZs4TNnareeQ-JSGdzf5Xc2zg-eLwO7W61cxW1HlHQS5B7Wqr~D63B6W3-nvgxenurTUedTiSrmcQ__";
-const strava = L.tileLayer(strava_proxy_url, {
+strava_url_2 = "https://content-a.strava.com/identified/globalheat/ride/bluered/{z}/{x}/{y}.png"
+strava_url_3 = "http://192.168.1.109:8080/identified/globalheat/ride/hot/{z}/{x}/{y}.png?v=19"
+
+strava_key = 'K3VK9UFQYD04PI';
+strava_policy = 'eyJTdGF0ZW1lbnQiOiBbeyJSZXNvdXJjZSI6Imh0dHBzOi8vKmNvbnRlbnQtKi5zdHJhdmEuY29tL2lkZW50aWZpZWQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0NzgxNTMzNH19fV19';
+strava_signature = 'UEcJNQQKPNY-sNafJfVZTBsdFrslJApQ2yVkeh4WUpAXKuH9ynR3jWztnhMZttFqDuJy~zH4frwLBmnaPqoMrCLHqMO-PAcODUWfHJOzCT00AcGjAYj28CT9exRsMJN3-BOgIXlOPegIRDSOxa6~FO-qmPxbd5NN8IZfUmRXrNOKPb9Skd6fAZJyeUanVHSbSvhvOUw~wxSniItdG-NX2b52t~S9vbE5I75x2kdB8vtduy~7yDwLp9T4DdN6ZTken0ED9PKl47Ml8zfLfQL4yRoQCXAzm6008NqxqrQs9cNCJU5yEZPAPYc9jcVEMIOxWW8oF1Zcu2vR0U3b2FCtXQ__';
+strava_idcf = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3NDc4MTUzMzQsImlhdCI6MTc0NzcyODkzNCwiYXRobGV0ZUlkIjo2NDExMjc4LCJ0aW1lc3RhbXAiOjE3NDc3Mjg5MzR9.QjRCfBI7qglKnUR_38XHGdIsQjw3OkUW0D2jUUbkrNw';
+strava_header = 'CloudFront-Key-Pair-Id=' + strava_key + '; CloudFront-Policy=' + strava_policy + '; CloudFront-Signature=' + strava_signature + '; _strava_idcf=' + strava_idcf + ';';
+
+document.cookie = 'CloudFront-Key-Pair-Id=' + strava_key;
+document.cookie = 'CloudFront-Policy=' + strava_policy;
+document.cookie = 'CloudFront-Signature=' + strava_signature;
+document.cookie =  '_strava_idcf=' + strava_idcf;
+
+console.log(document.cookie)
+
+strava_freemap = 'https://strava-heatmap.tiles.freemap.sk/all/hot/{z}/{x}/{y}.png?px=256'
+
+const strava = L.tileLayer(strava_url_3, {
   maxZoom: 19,
   attribution: ''
 });
 
-
+// const strava = new L.TileLayerWithHeaders(strava_url_2, {maxZoom: 19, attribution: ''}, [{header: 'Cookie', value: strava_header}]);
 
 var OpenRailwayMap = L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
   maxZoom: 19,
@@ -240,6 +335,11 @@ var WaymarkedTrails_hiking = L.tileLayer('https://tile.waymarkedtrails.org/hikin
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
+
+var WaymarkedTrails_cycling = L.tileLayer('https://tile.waymarkedtrails.org/cycling/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map style: &copy; <a href="https://waymarkedtrails.org">waymarkedtrails.org</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
 
 // -------------------------------------------------------
 // Custom icon classes
@@ -508,6 +608,13 @@ function clickFeature(e) {
   }
 }
 
+function fillModalIframe(d) {
+  let pt = data[d];
+  $("#iframeModalTitle").text(data[d]["name"]);
+  $("#iframe-modal").attr("src", data[d]["url"]);
+  $('#iframeModal').modal('show');
+}
+
 // -------------------------------------------------------
 // Add new marker to the appropriate layer
 // TODO: add layer list as parameter
@@ -532,7 +639,7 @@ function addMarker(d, update = false) {
   lat = data[d]["lat"];
   lon = data[d]["lon"];
   //desc = data[d]["id"] + " | " + data[d]["name"];
-  desc = data[d]["name"] + " <a href='#' onclick='map.closePopup(); $(\"#editModal\").modal(\"show\")'>edit</a>"
+  desc = '<a href=" ' + data[d]["url"] + ' " target="_blank">' + data[d]["name"] + "</a> <a href='#' onclick='map.closePopup(); $(\"#editModal\").modal(\"show\")'>edit</a>"
   icon_variant = visited.includes(data[d]["id"])?"visited":"white";
   icon = icons[cat][subcat]["m_"+icon_variant];
   
@@ -1125,10 +1232,12 @@ function squadrat2lat(y, z) {
 }
 
 function redrawTiles() {
-  return;
+  // return;
   if (tileLayer) tileLayer.removeFrom(map);
   tileLayer = null;
   tilePoints = [];
+
+  if (!drawSquadrats) return;
 
   if (map.getZoom() < 10) return;
 
@@ -1537,8 +1646,13 @@ var overLayers = [
       },
       {
         active: false,
-        name: "Waymarker trails",
+        name: "Hiking trails",
         layer: WaymarkedTrails_hiking
+      },
+      {
+        active: false,
+        name: "Cycling trails",
+        layer: WaymarkedTrails_cycling
       }
     ]
   },
@@ -1815,6 +1929,7 @@ class trackInfo {
     this.layer = L.layerGroup([]);
     this.visible = true;
     this.enabled = true;
+    this.active = false;
   }
 
   serialize = function() {
@@ -1845,6 +1960,29 @@ class trackInfo {
 
     return ret;
   }
+
+  forEachSegment = function(f) {
+    var n = this.first_node;
+
+    if (!n) return;
+    
+    while(n.s2) {
+      f(n.s2);
+      n = n.s2.n2;
+    }
+  }
+
+  forEachNode = function(f) {
+    var n = this.first_node;
+
+    if (!n) return;
+    
+    f(n);
+    while(n.s2) {
+      n = n.s2.n2;
+      f(n);
+    }
+  }
 }
 
 var active_track = null;
@@ -1858,6 +1996,7 @@ function loadTrack(track) {
   ti.length = track.length;
   ti.visible = track.visible;
   ti.enabled = track.enabled;
+  ti.active = false;
 
   if (track.nodes.length > 0) {
     addTrackNode(ti, track.nodes[0].lat, track.nodes[0].lng);
@@ -2030,6 +2169,30 @@ function addTrackItem(track_info) {
   $("#tracks-list").append(itemRow);
 }
 
+function activateTrack(track) {
+  track.active = true;
+  track.forEachSegment(seg => {
+    seg.segment.setStyle(activeSegmentStyle)
+    seg.segment.on("click", handleSegmentClick);
+  });
+
+  track.forEachNode(node => {
+    node.marker.addTo(track.layer);
+  });
+}
+
+function deactivateTrack(track) {
+  track.active = false;
+  track.forEachSegment(seg => {
+    seg.segment.setStyle(inactiveSegmentStyle)
+    seg.segment.off("click");
+  });
+
+  track.forEachNode(node => {
+    node.marker.removeFrom(track.layer);
+  });
+}
+
 function addNewTrack() {
   var new_track = new trackInfo();
 
@@ -2044,7 +2207,9 @@ function addNewTrack() {
     saveTrack(new_track);
 
     all_tracks.push(new_track);
+    if (active_track) deactivateTrack(active_track);
     active_track = new_track;
+    activateTrack(active_track);
     lat = 0;
     lng = 0;
     track_name = "Nowa trasa";
@@ -2112,13 +2277,28 @@ function calculateRoute(track, n1, n2) {
   });
 }
 
+
+var activeSegmentStyle = {
+  "color": "#15ff00",
+  "weight": 5,
+  "opacity": 0.5
+};
+
+var inactiveSegmentStyle = {
+  "color": "#5da8ff",
+  "weight": 2,
+  "opacity": 1
+};
+
+
+
 function addTrackSegment(track, n1, n2, json) {
   var new_segment = new trackSegment(n1, n2, null);
   new_segment.track = track;
   n2.s1 = new_segment;
   n1.s2 = new_segment;
 
-  segment = L.geoJson(json);
+  segment = L.geoJson(json);//, {style: myStyle});
   new_segment.segment = segment;
   console.log(json.features[0].properties["track-length"] * 0.001)
   new_segment.length_km = json.features[0].properties["track-length"] * 0.001;
@@ -2128,7 +2308,15 @@ function addTrackSegment(track, n1, n2, json) {
   new_segment.json = json
   // track_segments.push(segment);
   // console.log(segment);
-  segment.on("click", handleSegmentClick);
+  
+
+  if (track.active) {
+    segment.on("click", handleSegmentClick);
+    segment.setStyle(activeSegmentStyle);
+  } else {
+    segment.setStyle(inactiveSegmentStyle);
+  }
+
   segment.addTo(track.layer);
 }
 
@@ -2176,7 +2364,7 @@ function removeTrack(track_id) {
 function addTrackNode(track, lat, lon, segment = null) {
   marker = new L.marker([lat, lon], {icon: icons["sakralne"]["inne"]["s_white"], draggable: true});
   marker.on("dragend", handleMarkerDragEnd);
-  marker.addTo(track.layer);
+  if (track.active) marker.addTo(track.layer);
   var cur = [lat, lon];
 
   if (!track.first_node) {
